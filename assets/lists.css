@@ -1,0 +1,24 @@
+.vertical-list {
+  float: left;
+  min-width: 200px;
+  width: 25%;
+  overflow-y: auto;
+}
+
+.vertical-list section {
+  background-color: #21242d;
+  color: white;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  height: 10%;
+}
+
+.vertical-list section:hover {
+  background-color: #4d5261;
+}
+
+.vertical-list section.active {
+  background-color: #21242d;
+  color: white;
+}
