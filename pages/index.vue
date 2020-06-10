@@ -2,34 +2,44 @@
   <div class="full-page">
     <div class="vertical-list">
       <div class="library-banner">
-        <h1>Bibliothèque</h1>
+        <h3>Bibliothèque</h3>
       </div>
       <Search />
       <div v-for="lesson in lessons">
         <Post
           :title="lesson.title"
-          :lessonstyle="lesson.style"
+          :lessonStyle="lesson.style"
           :level="lesson.level"
           :postid="lesson.id"
         />
       </div>
     </div>
-    <div class="details">DETAILS THINGY</div>
+    <Details :activePost="getPostById(active)"/>
   </div>
 </template>
 
 <script>
 import Search from '@/components/Search'
 import Post from '@/components/Post'
+import Details from '@/components/Details'
 export default {
   components: {
     Search,
-    Post
+    Post,
+    Details
   },
   data() {
     return {
       lessons: require('~/data.json'),
       active: -1
+    }
+  },
+  methods: {
+    getPostById(searchedId) {
+      for (const post in this.lessons)
+        if (this.lessons[post].id == searchedId)
+          return this.lessons[post]
+      return null
     }
   }
 }
@@ -63,7 +73,6 @@ export default {
   color: white;
   padding: 1em;
   display: flow-root;
-  text-decoration: none;
   min-height: 10%;
 }
 </style>

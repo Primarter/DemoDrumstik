@@ -1,13 +1,13 @@
 <template>
   <section v-if="$parent.active != postid" class="post" @click="$parent.active = postid">
     <h3>{{ title }}</h3>
-    <p>{{ capitalizeFLetter(lessonstyle) }}</p>
-    <Stars :level="level" style="float: right" />
+    <p>{{ capitalizeFLetter(lessonStyle) }}</p>
+    <Stars :level="level" :scale="18" style="float: right" />
   </section>
   <section v-else class="active-post" @click="$parent.active = postid">
     <h3>{{ title }}</h3>
-    <p>{{ capitalizeFLetter(lessonstyle) }}</p>
-    <Stars :level="level" style="float: right" />
+    <p>{{ capitalizeFLetter(lessonStyle) }}</p>
+    <Stars :level="level" :scale="18" style="float: right" />
   </section>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   components: {
     Stars
   },
-  props: ['title', 'lessonstyle', 'level', 'postid'],
+  props: ['title', 'lessonStyle', 'level', 'postid'],
   methods: {
     capitalizeFLetter(str) {
       return str[0].toUpperCase() + str.slice(1).toLowerCase()
