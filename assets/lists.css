@@ -12,22 +12,3 @@
 .vertical-list {
   -ms-overflow-style: none;
 }
-
-.vertical-list section {
-  background-color: #21242d;
-  color: white;
-  padding: 12px;
-  text-decoration: none;
-  display: flow-root;
-  min-height: 10vh;
-  border-bottom: solid #60dfe8 1px;
-}
-
-.vertical-list section:hover {
-  background-color: #4d5261;
-}
-
-.vertical-list section.active {
-  background-color: #4D5261;
-  color: white;
-}

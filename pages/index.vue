@@ -5,11 +5,12 @@
         <h1>Bibliothèque</h1>
       </div>
       <Search />
-      <div v-for="lesson in lessons" :key="lesson">
+      <div v-for="lesson in lessons">
         <Post
           :title="lesson.title"
           :lessonstyle="lesson.style"
           :level="lesson.level"
+          :postid="lesson.id"
         />
       </div>
     </div>
@@ -27,7 +28,8 @@ export default {
   },
   data() {
     return {
-      lessons: require('~/data.json')
+      lessons: require('~/data.json'),
+      active: -1
     }
   }
 }
