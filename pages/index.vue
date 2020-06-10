@@ -1,26 +1,28 @@
 <template>
-  <div class="container">
+  <div class="full-page">
     <div class="vertical-list">
-      <section class="active">
+      <div class="library-banner">
         <h1>Bibliothèque</h1>
-        <i class="fa fa-search" style="font-size: 1.5em"></i>
-      </section>
-      <section v-for="lesson in lessons" :key="lesson">
+      </div>
+      <Search />
+      <div v-for="lesson in lessons" :key="lesson">
         <Post
           :title="lesson.title"
           :lessonstyle="lesson.style"
           :level="lesson.level"
         />
-      </section>
+      </div>
     </div>
     <div class="details">DETAILS THINGY</div>
   </div>
 </template>
 
 <script>
+import Search from '@/components/Search'
 import Post from '@/components/Post'
 export default {
   components: {
+    Search,
     Post
   },
   data() {
@@ -41,13 +43,25 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: white;
   border: 2px solid #21242d;
+  background-color: #4a4e5e;
   padding: 2px;
 }
 
-.container {
+.full-page {
   margin: 0 auto;
   min-height: 100vh;
+  max-height: 100vh;
   display: flex;
+}
+
+.library-banner {
+  background-color: #21242d;
+  color: white;
+  padding: 1em;
+  display: flow-root;
+  text-decoration: none;
+  min-height: 10%;
 }
 </style>

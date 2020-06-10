@@ -1,23 +1,36 @@
 <template>
-  <div class="containerDiv">
-    <input type="text" onkeyup="onChange();" />
-    <div id="nameContainer"></div>
+  <div class="search-container">
+    <div style="float: left">
+      <i class="fa fa-search" style="font-size: 1.5em" />
+    </div>
+    <span class="in-wrapper">
+      <input
+        type="search"
+        onkeyup="onChange();"
+        placeholder="Votre recherche"
+      />
+    </span>
   </div>
 </template>
 
 <style>
-.containerDiv {
-  display: block;
+.search-container {
+  float: left;
   margin: auto;
-  width: 300px;
+  min-width: 100%;
+  padding: 2%;
+  color: black;
+  background-color: #ffffff;
+  display: block;
 }
-#nameContainer > p {
-  display: inline-block;
-  margin: 20px;
-}
-input {
-  width: 200px;
+.search-container input {
+  width: 100%;
   font-size: 20px;
+}
+.in-wrapper {
+  display: block;
+  overflow: hidden;
+  padding: 0 5px;
 }
 </style>
 

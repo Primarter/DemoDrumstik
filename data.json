@@ -160,5 +160,41 @@
     "resume_fr": "R2sumé français de cet exercice",
     "description_fr": "",
     "resources": "[{\"id\":176,\"name\":\"1586548110-Fastlane - Fev MAUG.dsk\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/storage\\\/content\\\/b106019b-dd05-439e-b8e1-3edd7ade24b7\\\/1586548110-Fastlane - Fev MAUG.dsk\",\"type\":\"resource.file\"},{\"id\":177,\"name\":\"1586548126-neilPeart.jpg\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/storage\\\/content\\\/b106019b-dd05-439e-b8e1-3edd7ade24b7\\\/1586548126-neilPeart.jpg\",\"type\":\"resource.thumbnail\"},{\"id\":178,\"name\":\"1586548140-aquiles-priester-header.jpg\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/storage\\\/content\\\/b106019b-dd05-439e-b8e1-3edd7ade24b7\\\/1586548140-aquiles-priester-header.jpg\",\"type\":\"resource.banner\"}]"
+  },
+  {
+    "id": 43,
+    "uuid": "15479a38-7b56-45f4-a0de-35831448e271",
+    "title": "Gospel Chops - Les bases",
+    "style": "Gospel",
+    "level": 1,
+    "resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ullamcorper dui vitae malesuada. Nam vulputate turpis in porta tristique. Vestibulum bibendum, risus at venenatis venenatis, sem nisl feugiat felis, vitae convallis elit velit a purus. Vestibulum elementum sem a pretium imperdiet. Fusce dignissim, lorem ut blandit rutrum, neque nisl varius quam, vitae fringilla diam ante at purus. In commodo nisi ut nunc vulputate lobortis. Sed at ligula sed lacus ultrices congue eu non leo. Vivamus venenatis libero quis tortor rhoncus tempor. Sed porttitor tincidunt dignissim. Nam elementum risus at ipsum fringilla, et bibendum nisl dictum.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ullamcorper dui vitae malesuada. Nam vulputate turpis in porta tristique. Vestibulum bibendum, risus at venenatis venenatis, sem nisl feugiat felis, vitae convallis elit velit a purus. Vestibulum elementum sem a pretium imperdiet. Fusce dignissim, lorem ut blandit rutrum, neque nisl varius quam, vitae fringilla diam ante at purus. In commodo nisi ut nunc vulputate lobortis. Sed at ligula sed lacus ultrices congue eu non leo. Vivamus venenatis libero quis tortor rhoncus tempor. Sed porttitor tincidunt dignissim. Nam elementum risus at ipsum fringilla, et bibendum nisl dictum.\n\nAenean varius leo nec feugiat elementum. Pellentesque non ex dapibus, egestas lectus non, rutrum dui. Suspendisse potenti. Suspendisse feugiat, orci blandit porta commodo, odio sapien convallis felis, at iaculis lectus odio et ante. Morbi auctor id odio at lobortis. Suspendisse tincidunt est a lectus tempus condimentum. Sed tristique, lectus in bibendum vulputate, mi magna commodo tellus, sit amet auctor dolor quam et arcu. Praesent cursus justo sit amet scelerisque vestibulum. Maecenas feugiat faucibus dapibus. Nam et porttitor ex, vitae efficitur leo. Phasellus ac orci id augue pretium semper et non justo. In hac habitasse platea dictumst. Nam euismod pulvinar lacus sed mollis. Suspendisse nec varius est. Aenean non efficitur enim, eu pulvinar mauris. Praesent volutpat vel velit a facilisis.\n\nMauris volutpat odio vitae dui&nbsp;",
+    "videoUrl": "https:\/\/www.youtube.com\/embed\/Qzo7jygP9Os",
+    "duration": 120,
+    "skills": "CREATIVITY;COORDINATION",
+    "created_at": "2020-03-29 17:19:53",
+    "updated_at": "2020-03-31 08:55:31",
+    "title_fr": "",
+    "resume_fr": "",
+    "description_fr": "",
+    "resources": "[{\"id\":143,\"name\":\"BFM-header.png\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/resources\\\/content\\\/15479a38-7b56-45f4-a0de-35831448e271\\\/BFM-header.png\",\"type\":\"resource.banner\"},{\"id\":144,\"name\":\"BFM thumbnail.jpg\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/resources\\\/content\\\/15479a38-7b56-45f4-a0de-35831448e271\\\/BFM thumbnail.jpg\",\"type\":\"resource.thumbnail\"},{\"id\":145,\"name\":\"demo drumstik POP.dsk\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/resources\\\/content\\\/15479a38-7b56-45f4-a0de-35831448e271\\\/demo drumstik POP.dsk\",\"type\":\"resource.file\"}]"
+  },
+  {
+    "id": 45,
+    "uuid": "15479a38-7b56-45f4-a0de-35831448e271",
+    "title": "Gospel Chops - Les bases",
+    "style": "Gospel",
+    "level": 1,
+    "resume": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ullamcorper dui vitae malesuada. Nam vulputate turpis in porta tristique. Vestibulum bibendum, risus at venenatis venenatis, sem nisl feugiat felis, vitae convallis elit velit a purus. Vestibulum elementum sem a pretium imperdiet. Fusce dignissim, lorem ut blandit rutrum, neque nisl varius quam, vitae fringilla diam ante at purus. In commodo nisi ut nunc vulputate lobortis. Sed at ligula sed lacus ultrices congue eu non leo. Vivamus venenatis libero quis tortor rhoncus tempor. Sed porttitor tincidunt dignissim. Nam elementum risus at ipsum fringilla, et bibendum nisl dictum.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper ullamcorper dui vitae malesuada. Nam vulputate turpis in porta tristique. Vestibulum bibendum, risus at venenatis venenatis, sem nisl feugiat felis, vitae convallis elit velit a purus. Vestibulum elementum sem a pretium imperdiet. Fusce dignissim, lorem ut blandit rutrum, neque nisl varius quam, vitae fringilla diam ante at purus. In commodo nisi ut nunc vulputate lobortis. Sed at ligula sed lacus ultrices congue eu non leo. Vivamus venenatis libero quis tortor rhoncus tempor. Sed porttitor tincidunt dignissim. Nam elementum risus at ipsum fringilla, et bibendum nisl dictum.\n\nAenean varius leo nec feugiat elementum. Pellentesque non ex dapibus, egestas lectus non, rutrum dui. Suspendisse potenti. Suspendisse feugiat, orci blandit porta commodo, odio sapien convallis felis, at iaculis lectus odio et ante. Morbi auctor id odio at lobortis. Suspendisse tincidunt est a lectus tempus condimentum. Sed tristique, lectus in bibendum vulputate, mi magna commodo tellus, sit amet auctor dolor quam et arcu. Praesent cursus justo sit amet scelerisque vestibulum. Maecenas feugiat faucibus dapibus. Nam et porttitor ex, vitae efficitur leo. Phasellus ac orci id augue pretium semper et non justo. In hac habitasse platea dictumst. Nam euismod pulvinar lacus sed mollis. Suspendisse nec varius est. Aenean non efficitur enim, eu pulvinar mauris. Praesent volutpat vel velit a facilisis.\n\nMauris volutpat odio vitae dui&nbsp;",
+    "videoUrl": "https:\/\/www.youtube.com\/embed\/Qzo7jygP9Os",
+    "duration": 120,
+    "skills": "CREATIVITY;COORDINATION",
+    "created_at": "2020-03-29 17:19:53",
+    "updated_at": "2020-03-31 08:55:31",
+    "title_fr": "",
+    "resume_fr": "",
+    "description_fr": "",
+    "resources": "[{\"id\":143,\"name\":\"BFM-header.png\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/resources\\\/content\\\/15479a38-7b56-45f4-a0de-35831448e271\\\/BFM-header.png\",\"type\":\"resource.banner\"},{\"id\":144,\"name\":\"BFM thumbnail.jpg\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/resources\\\/content\\\/15479a38-7b56-45f4-a0de-35831448e271\\\/BFM thumbnail.jpg\",\"type\":\"resource.thumbnail\"},{\"id\":145,\"name\":\"demo drumstik POP.dsk\",\"url\":\"http:\\\/\\\/dev.drumstik.com\\\/resources\\\/content\\\/15479a38-7b56-45f4-a0de-35831448e271\\\/demo drumstik POP.dsk\",\"type\":\"resource.file\"}]"
   }
 ]
