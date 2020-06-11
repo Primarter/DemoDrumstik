@@ -5,8 +5,9 @@
     </div>
     <span class="in-wrapper">
       <input
+        id="search-input"
         type="search"
-        onkeyup="onChange();"
+        v-on:keyup="onKeyUp()"
         placeholder="Votre recherche"
       />
     </span>
@@ -36,6 +37,29 @@
 
 <script>
 export default {
-  props: []
+  methods: {
+    checkName (name, str) {
+      const pattern = str
+        .split('')
+        .map((x) => {
+          return `(?=.*${x})`
+        })
+        .join('')
+      const regex = new RegExp(`${pattern}`, 'g')
+      return name.match(regex)
+    },
+    onKeyUp () {
+      const arr = []
+      this.$parent.lessons.forEach(obj => {
+        arr.push()
+      });
+      const str = event.target.value.toLowerCase().substring(0, 3)
+      const filteredArr = this.$parent.lessons.filter((x) => {
+        const xSub = x.title.substring(0, 3).toLowerCase()
+        return x.title.toLowerCase().includes(str) || this.checkName(xSub, str)
+      })
+      this.$parent.results = filteredArr
+    }
+  }
 }
 </script>
