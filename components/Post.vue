@@ -6,7 +6,7 @@
   </section>
   <section v-else class="active-post" @click="$parent.active = postid">
     <h3>{{ title }}</h3>
-    <p>{{ capitalizeFLetter(lessonStyle) }}</p>
+    <p style="font-size: 18px">{{ capitalizeFLetter(lessonStyle) }}</p>
     <Stars :level="level" :scale="18" style="float: right" />
   </section>
 </template>

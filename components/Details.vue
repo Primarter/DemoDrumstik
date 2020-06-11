@@ -10,8 +10,16 @@
         :src="activePost.videoUrl"
       />
       <div>
+        <Stars :level="activePost.level" :scale="36" style="float: right" />
         <h1>{{ activePost.title }}</h1>
-        <p><i class="fa fa-clock-o"></i> {{ activePost.duration }}</p>
+        <b style="float: right">{{ activePost.style.toUpperCase() }}</b>
+        <p style="font-size: 15px">
+          <i class="fa fa-clock-o"></i> {{ formatTime(activePost.duration) + formatSkills(activePost.skills) }}
+        </p>
+      </div>
+      <div class="description-wrapper">
+        <p v-html="activePost.resume">{{ activePost.resume }}</p><br />
+        <p v-html="activePost.description">{{ activePost.description }}</p>
       </div>
     </div>
     <div v-else class="awaiting-selection">
@@ -25,8 +33,27 @@
 </template>
 
 <script>
+import Stars from '@/components/Stars'
 export default {
-  props: ['activePost']
+  head () {
+    return {
+      script: [
+        { src: 'formatting.js' }
+      ],
+    }
+  },
+  components: {
+    Stars
+  },
+  props: ['activePost'],
+  methods: {
+    formatTime(mins) {
+      return formatTimeStr(mins)
+    },
+    formatSkills(skills) {
+      return formatSkillStr(skills)
+    }
+  }
 }
 </script>
 
@@ -47,6 +74,8 @@ export default {
 .details-active-wrapper {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
 }
 
 .centered-items {
@@ -63,6 +92,10 @@ export default {
   width: 100%;
   justify-content: center;
   text-align: center;
+}
+
+.details-active-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .awaiting-selection {

@@ -3,12 +3,9 @@
   min-width: 25%;
   width: 25%;
   overflow-y: auto;
+  -ms-overflow-style: none;
 }
 
 .vertical-list::-webkit-scrollbar {
   display: none;
-}
-
-.vertical-list {
-  -ms-overflow-style: none;
 }
