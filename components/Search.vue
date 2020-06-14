@@ -36,7 +36,15 @@
 </style>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters({
+      lessons: 'lessons',
+      results: 'results',
+    })
+  },
   methods: {
     checkName (name, str) {
       const pattern = str
@@ -49,16 +57,12 @@ export default {
       return name.match(regex)
     },
     onKeyUp () {
-      const arr = []
-      this.$parent.lessons.forEach(obj => {
-        arr.push()
-      });
       const str = event.target.value.toLowerCase().substring(0, 3)
-      const filteredArr = this.$parent.lessons.filter((x) => {
+      const filteredArr = this.lessons.filter((x) => {
         const xSub = x.title.substring(0, 3).toLowerCase()
         return x.title.toLowerCase().includes(str) || this.checkName(xSub, str)
       })
-      this.$parent.results = filteredArr
+      this.$store.commit('updateResults', filteredArr)
     }
   }
 }

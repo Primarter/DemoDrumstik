@@ -17,5 +17,7 @@
     "axios": "^0.19.2",
     "nuxt": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-preset-stage-2": "^6.24.1"
+  }
 }

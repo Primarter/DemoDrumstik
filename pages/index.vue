@@ -5,6 +5,7 @@
         <h3>Bibliothèque</h3>
       </div>
       <Search />
+      <h1 v-if="results.length == 0" class="hint">No results</h1>
       <div v-for="lesson in results">
         <Post
           :title="lesson.title"
@@ -14,35 +15,54 @@
         />
       </div>
     </div>
-    <Details :activePost="getPostById(active)"/>
+    <Details />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Search from '@/components/Search'
 import Post from '@/components/Post'
 import Details from '@/components/Details'
+
 export default {
   components: {
     Search,
     Post,
     Details
   },
-  data() {
-    return {
-      lessons: require('~/data.json'),
-      results: require('~/data.json'),
-      active: -1
-    }
+  computed: {
+    ...mapGetters({
+      lessons: 'lessons',
+      results: 'results',
+      liked: 'liked',
+      activePost: 'activePost'
+    })
   },
   methods: {
+    initLikes() {
+      this.$store.commit('initLikes');
+    },
     getPostById(searchedId) {
       for (const post in this.lessons)
         if (this.lessons[post].id == searchedId)
           return this.lessons[post]
       return null
+    },
+    handleResize() {
+      this.$store.commit('updateWindowSize', window.innerWidth, window.innerHeight)
     }
-  }
+  },
+  mounted() {
+    this.initLikes();
+  },
+  beforeMount() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
+  },
 }
 </script>
 
@@ -67,13 +87,20 @@ export default {
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
+  background-color: #21242d;
 }
 
 .library-banner {
   background-color: #21242d;
   color: white;
-  padding: 1em;
-  display: flow-root;
-  min-height: 10%;
+  text-align: center;
+  display: block;
+  height: 7.5%;
+  min-height: 50px;
+}
+
+.hint {
+  color: #50576d;
+  text-align: center;
 }
 </style>

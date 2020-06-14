@@ -15,7 +15,7 @@ export default {
       }
     ],
     script: [
-      { src: 'formatting.js' }
+      { src: 'formatting.js' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -43,7 +43,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/main.css', '~/assets/lists.css'],
+  css: ['~/assets/main.css', '~/assets/lists.css', ],
   /*
    ** Plugins to load before mounting the App
    */

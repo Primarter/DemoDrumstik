@@ -2,14 +2,18 @@
   <div class="details-container">
     <div v-if="activePost != null" class="details-active-wrapper">
       <div class="top-banner">
-          <h3>Détails</h3>
+        <h3 style="width: 100%">Détails
+        </h3>
+        <i @click="likeItem(activePost.id)" :class="heartClass" style="margin: auto" />
       </div>
       <iframe
+        frameBorder="0"
         width="100%"
         height="40%"
         :src="activePost.videoUrl"
+        class="video-player"
       />
-      <div>
+      <div style="">
         <Stars :level="activePost.level" :scale="36" style="float: right" />
         <h1>{{ activePost.title }}</h1>
         <b style="float: right">{{ activePost.style.toUpperCase() }}</b>
@@ -24,7 +28,8 @@
     </div>
     <div v-else class="awaiting-selection">
       <div class="centered-items">
-        <h1 style="display: inline-block">
+        <img src="https://www.drumstik.fr/website/pics/dsk_logo.png" alt="Drumstik" style="margin: auto" />
+        <h1 style="display: block">
           <i class="fa fa-arrow-left" /> Sélectionnez un cours sur le panneau de gauche
         </h1>
       </div>
@@ -33,26 +38,47 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Stars from '@/components/Stars'
+
 export default {
   head () {
     return {
-      script: [
-        { src: 'formatting.js' }
-      ],
+      script: [{ src: 'formatting.js' }],
+    }
+  },
+  data() {
+    return {
+      heartClass: "fa fa-heart-o fa-2x"
     }
   },
   components: {
     Stars
   },
-  props: ['activePost'],
+  computed: {
+    ...mapGetters({
+      activePost: 'activePost',
+      lessons: 'lessons',
+      results: 'results',
+      liked: 'liked',
+    })
+  },
   methods: {
     formatTime(mins) {
-      return formatTimeStr(mins)
+      return formatTimeStr(mins);
     },
     formatSkills(skills) {
-      return formatSkillStr(skills)
-    }
+      return formatSkillStr(skills);
+    },
+    likeItem(item) {
+      if (this.activePost.liked) {
+        this.$store.commit('removeLike');
+        this.heartClass = "fa fa-heart-o fa-2x"
+      } else {
+        this.$store.commit('addLike');
+        this.heartClass = "fa fa-heart fa-2x"
+      }
+    },
   }
 }
 </script>
@@ -67,7 +93,6 @@ export default {
   color: white;
   border: 2px solid #21242d;
   background-color: #4a4e5e;
-  padding: 2px;
   display: flex;
 }
 
@@ -80,16 +105,16 @@ export default {
 
 .centered-items {
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  text-align: center;
 }
 
 .top-banner {
   display: flex;
-  height: 10%;
-  min-height: 10%;
+  height: 7.5%;
+  min-height: 50px;
   width: 100%;
+  padding: 0.5em;
   justify-content: center;
   text-align: center;
 }
@@ -99,13 +124,21 @@ export default {
 }
 
 .awaiting-selection {
-  background-image: url("https://www.drumstik.fr/website/pics/dsk_logo.png");
-  background-repeat: no-repeat;
-  background-position: center 20%;
   margin: auto;
   width: 100%;
   height: 100%;
   text-align: center;
+}
+
+.video-player {
+  min-height: 200px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 3px;
+  border-left-width: 0px;
+  border-style: inset;
+  border-color: #60dfe8;
+  border-image: initial;
 }
 
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <section v-if="$parent.active != postid" class="post" @click="$parent.active = postid">
+  <section v-if="activePost == null || activePost.id != postid" class="post" @click="changeActive(postid)">
     <h3>{{ title }}</h3>
     <p>{{ capitalizeFLetter(lessonStyle) }}</p>
     <Stars :level="level" :scale="18" style="float: right" />
   </section>
-  <section v-else class="active-post" @click="$parent.active = postid">
+  <section v-else class="active-post">
     <h3>{{ title }}</h3>
     <p style="font-size: 18px">{{ capitalizeFLetter(lessonStyle) }}</p>
     <Stars :level="level" :scale="18" style="float: right" />
@@ -12,15 +12,24 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Stars from '@/components/Stars'
 export default {
   components: {
     Stars
   },
   props: ['title', 'lessonStyle', 'level', 'postid'],
+  computed: {
+    ...mapGetters({
+      activePost: 'activePost',
+    })
+  },
   methods: {
     capitalizeFLetter(str) {
       return str[0].toUpperCase() + str.slice(1).toLowerCase()
+    },
+    changeActive(postid) {
+      this.$store.commit('updateActive', postid)
     }
   }
 }
