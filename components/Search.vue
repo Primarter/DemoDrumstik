@@ -1,37 +1,32 @@
 <template>
   <div class="search-container">
-    <div style="float: left">
+    <div style="display: table-cell">
       <i class="fa fa-search" style="font-size: 1.5em" />
     </div>
-    <span class="in-wrapper">
-      <input
-        id="search-input"
-        type="search"
-        v-on:keyup="onKeyUp()"
-        placeholder="Votre recherche"
-      />
-    </span>
+    <input
+      id="search-input"
+      type="search"
+      v-on:keyup="onKeyUp()"
+      placeholder="Votre recherche"
+    />
   </div>
 </template>
 
 <style>
 .search-container {
   float: left;
-  margin: auto;
   min-width: 100%;
   padding: 2%;
   color: black;
   background-color: #ffffff;
-  display: block;
+  display: table;
 }
 .search-container input {
-  width: 100%;
-  font-size: 20px;
-}
-.in-wrapper {
-  display: block;
-  overflow: hidden;
-  padding: 0 5px;
+  font-size: 18px;
+  display: table-cell;
+  padding-left: 5px;
+  margin-bottom: 0px;
+  border: 0;
 }
 </style>
 

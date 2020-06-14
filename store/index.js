@@ -43,6 +43,9 @@ export const mutations = {
     state.winWidth = width;
     state.winHeight = height;
   },
+  updateFilter(state, newFilter) {
+    state.filter = newFilter;
+  },
   updateResults(state, newResults) {
     state.results = newResults;
   },

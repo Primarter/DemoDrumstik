@@ -4,7 +4,8 @@
       <div class="library-banner">
         <h3>Bibliothèque</h3>
       </div>
-      <Search />
+      <Search style="height: 5%" />
+      <Filters style="height: 5%" />
       <h1 v-if="results.length == 0" class="hint">No results</h1>
       <div v-for="lesson in results">
         <Post
@@ -21,12 +22,14 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Filters from '@/components/Filters'
 import Search from '@/components/Search'
 import Post from '@/components/Post'
 import Details from '@/components/Details'
 
 export default {
   components: {
+    Filters,
     Search,
     Post,
     Details
