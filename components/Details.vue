@@ -13,7 +13,7 @@
         :src="activePost.videoUrl"
         class="video-player"
       />
-      <div style="">
+      <div style="padding: 1%">
         <Stars :level="activePost.level" :scale="36" style="float: right" />
         <h1>{{ activePost.title }}</h1>
         <b style="float: right">{{ activePost.style.toUpperCase() }}</b>
@@ -21,7 +21,7 @@
           <i class="fa fa-clock-o"></i> {{ formatTime(activePost.duration) + formatSkills(activePost.skills) }}
         </p>
       </div>
-      <div class="description-wrapper">
+      <div style="padding: 1%">
         <p v-html="activePost.resume">{{ activePost.resume }}</p><br />
         <p v-html="activePost.description">{{ activePost.description }}</p>
       </div>
@@ -49,7 +49,6 @@ export default {
   },
   data() {
     return {
-      heartClass: "fa fa-heart-o fa-2x"
     }
   },
   components: {
@@ -61,7 +60,8 @@ export default {
       lessons: 'lessons',
       results: 'results',
       liked: 'liked',
-    })
+      heartClass: 'heartClass'
+    }),
   },
   methods: {
     formatTime(mins) {
@@ -73,10 +73,8 @@ export default {
     likeItem(item) {
       if (this.activePost.liked) {
         this.$store.commit('removeLike');
-        this.heartClass = "fa fa-heart-o fa-2x"
       } else {
         this.$store.commit('addLike');
-        this.heartClass = "fa fa-heart fa-2x"
       }
     },
   }

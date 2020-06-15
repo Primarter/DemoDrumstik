@@ -3,12 +3,13 @@
     <div class="vertical-list">
       <div class="library-banner">
         <h3>Bibliothèque</h3>
+        <Search style="height: 5%" />
+        <Filters style="height: 5%" />
       </div>
-      <Search style="height: 5%" />
-      <Filters style="height: 5%" />
       <h1 v-if="results.length == 0" class="hint">No results</h1>
       <div v-for="lesson in results">
         <Post
+          v-if="checkFilter(lesson)"
           :title="lesson.title"
           :lessonStyle="lesson.style"
           :level="lesson.level"
@@ -39,7 +40,8 @@ export default {
       lessons: 'lessons',
       results: 'results',
       liked: 'liked',
-      activePost: 'activePost'
+      activePost: 'activePost',
+      filter: 'filter'
     })
   },
   methods: {
@@ -54,6 +56,14 @@ export default {
     },
     handleResize() {
       this.$store.commit('updateWindowSize', window.innerWidth, window.innerHeight)
+    },
+    checkFilter(lesson) {
+      if (this.filter == 'all')
+        return true;
+      if (this.filter == 'favorites' && lesson.liked == true)
+        return true;
+      if (this.filter == 'files')
+        return true;
     }
   },
   mounted() {
@@ -97,8 +107,6 @@ export default {
   background-color: #21242d;
   color: white;
   text-align: center;
-  display: block;
-  height: 7.5%;
   min-height: 50px;
 }
 

@@ -4,7 +4,9 @@ export const state = () => ({
   activePost: null,
   filter: 'all',
   winWidth: 1280,
-  winHeight: 720
+  winHeight: 720,
+  search: 'title',
+  heartClass: 'fa fa-heart fa-2x'
 })
 
 export const getters = {
@@ -22,6 +24,15 @@ export const getters = {
   },
   activePost(state) {
     return state.activePost;
+  },
+  filter(state) {
+    return state.filter;
+  },
+  search(state) {
+    return state.search;
+  },
+  heartClass(state) {
+    return state.heartClass;
   }
 }
 
@@ -49,14 +60,20 @@ export const mutations = {
   updateResults(state, newResults) {
     state.results = newResults;
   },
+  updateSearch(state, newSearch) {
+    state.search = newSearch;
+  },
   updateActive(state, postId) {
     state.activePost = state.lessons[getPostIndById(state.lessons, postId)];
+    state.heartClass = state.activePost.liked == true ? 'fa fa-heart fa-2x' : 'fa fa-heart-o fa-2x'
   },
   addLike(state) {
+    state.heartClass = 'fa fa-heart fa-2x';
     state.activePost.liked = true;
     state.lessons[getPostIndById(state.lessons, state.activePost.id)].liked = true;
   },
   removeLike(state) {
+    state.heartClass = 'fa fa-heart-o fa-2x';
     state.activePost.liked = false;
     state.lessons[getPostIndById(state.lessons, state.activePost.id)].liked = false;
   }

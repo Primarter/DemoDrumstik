@@ -1,9 +1,8 @@
 <template>
   <div class="filters-wrapper">
-    <a :style="linkStyle[0]" @click="updateFilter(0, 'all')">Tous</a>
-    <a :style="linkStyle[1]" @click="updateFilter(1, 'files')">Mes fichiers</a>
-    <a :style="linkStyle[2]" @click="updateFilter(2, 'favorites')">Favoris</a>
-    <a :style="linkStyle[3]" @click="updateFilter(3, 'styles')">Styles</a>
+    <div class="filter my-btn" @click="updateFilter(0, 'all')" :style="linkStyle[0]">Tous</div>
+    <div class="filter my-btn" @click="updateFilter(1, 'files')" :style="linkStyle[1]">Mes fichiers</div>
+    <div class="filter my-btn" @click="updateFilter(2, 'favorites')" :style="linkStyle[2]">Favoris</div>
   </div>
 </template>
 
@@ -11,22 +10,29 @@
 export default {
   data() {
     return {
-      linkStyle: ['text-decoration: underline', '', '', '']
+      linkStyle: ['background-color: #16181f', '', '']
+    }
+  },
+  computed: {
+    filter() {
+      return this.$store.getters.filter
     }
   },
   methods: {
     updateFilter(idx, newFilter) {
       for (let i = 0; i < this.linkStyle.length; i++) {
         if (i == idx) {
-          this.$set(this.linkStyle, i, 'text-decoration: underline');
+          this.$set(this.linkStyle, i, 'background-color: #16181f');
         } else {
           this.$set(this.linkStyle, i, '');
         }
       }
       this.$store.commit('updateFilter', newFilter);
+      console.log('Results now filtered by ' +  this.filter);
     }
   }
 }
+
 </script>
 
 <style>
@@ -39,13 +45,18 @@ export default {
   color: #60dfe8;
 }
 
-.filters-wrapper a {
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filters-wrapper .filter {
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
   display: table-cell;
   text-align: center;
   color: #60dfe8;
-  font-size: 14px;
+  font-size: 18px;
 }
 </style>

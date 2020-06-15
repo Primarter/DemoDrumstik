@@ -6,7 +6,39 @@
     opacity: 0;
 }
 
+.my-btn {
+  background-color: #21242d;
+  color: #60dfe8;
+  padding: 1.25em 0 1.25em 0;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.my-btn:hover, .my-btn:focus {
+  background-color: #16181f;
+  outline: none;
+}
+
 * {
     box-sizing: border-box;
     font-size: 18px;
+}
+
+input:hover,
+input:active,
+input:focus
+{
+  outline-offset: 0;
+  outline: 0px !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+}
+
+.wordwrap {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }

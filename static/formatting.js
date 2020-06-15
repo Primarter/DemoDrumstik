@@ -27,3 +27,22 @@ function formatSkillStr(skills) {
   });
   return format
 }
+
+function formatSearch(search) {
+  switch (search) {
+    case 'title':
+      return 'Titres';
+    case 'style':
+      return 'Styles';
+    case 'resume':
+      return 'Résumé';
+    case 'description':
+      return 'Description';
+    case 'skills':
+      return 'Techniques';
+    case 'duration':
+      return 'Durée';
+    default:
+      return null;
+  }
+}

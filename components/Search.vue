@@ -1,14 +1,27 @@
 <template>
   <div class="search-container">
-    <div style="display: table-cell">
+    <div style="display: table-cell; float: left">
       <i class="fa fa-search" style="font-size: 1.5em" />
     </div>
     <input
+      ref="search-input"
       id="search-input"
       type="search"
+      style="display: inline-block; float: left"
       v-on:keyup="onKeyUp()"
       placeholder="Votre recherche"
     />
+    <div @click="toggleDropdown()" class="dropdown-wrapper" style="float: right">
+      {{ searchTrad() }}&#x25BC;
+      <div ref="myDropdown" class="dropdown-content wordwrap">
+        <a @click="updateSearch('title')">Titres</a>
+        <a @click="updateSearch('style')">Styles</a>
+        <a @click="updateSearch('resume')">Résumé</a>
+        <a @click="updateSearch('description')">Description</a>
+        <a @click="updateSearch('skills')">Technique</a>
+        <a @click="updateSearch('duration')">Durée</a>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +40,7 @@
   padding-left: 5px;
   margin-bottom: 0px;
   border: 0;
+  box-shadow: none;
 }
 </style>
 
@@ -34,10 +48,16 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  head () {
+    return {
+      script: [{ src: 'formatting.js' }],
+    }
+  },
   computed: {
     ...mapGetters({
       lessons: 'lessons',
       results: 'results',
+      search: 'search'
     })
   },
   methods: {
@@ -54,10 +74,34 @@ export default {
     onKeyUp () {
       const str = event.target.value.toLowerCase().substring(0, 3)
       const filteredArr = this.lessons.filter((x) => {
-        const xSub = x.title.substring(0, 3).toLowerCase()
-        return x.title.toLowerCase().includes(str) || this.checkName(xSub, str)
+        const xSub = x[this.search].substring(0, 3).toLowerCase()
+        return x[this.search].toLowerCase().includes(str) || this.checkName(xSub, str)
       })
       this.$store.commit('updateResults', filteredArr)
+    },
+    toggleDropdown() {
+      this.$refs.myDropdown.classList.toggle("show");
+    },
+    updateSearch(newSearch) {
+      this.$store.commit('updateSearch', newSearch);
+    },
+    searchTrad() {
+      switch (this.search) {
+        case 'title':
+          return 'Titres';
+        case 'style':
+          return 'Styles';
+        case 'resume':
+          return 'Résumé';
+        case 'description':
+          return 'Description';
+        case 'skills':
+          return 'Techniques';
+        case 'duration':
+          return 'Durée';
+        default:
+          break;
+      }
     }
   }
 }

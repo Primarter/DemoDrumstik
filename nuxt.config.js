@@ -43,7 +43,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/main.css', '~/assets/lists.css', ],
+  css: ['~/assets/main.css', '~/assets/lists.css', '~/assets/dropdown-menu.css'],
   /*
    ** Plugins to load before mounting the App
    */
