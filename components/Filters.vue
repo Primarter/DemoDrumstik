@@ -1,8 +1,8 @@
 <template>
   <div class="filters-wrapper">
-    <div class="filter my-btn" @click="updateFilter(0, 'all')" :style="linkStyle[0]">Tous</div>
-    <div class="filter my-btn" @click="updateFilter(1, 'files')" :style="linkStyle[1]">Mes fichiers</div>
-    <div class="filter my-btn" @click="updateFilter(2, 'favorites')" :style="linkStyle[2]">Favoris</div>
+    <div class="my-btn" @click="updateFilter(0, 'all')" :style="linkStyle[0] + 'display: inline-block; min-width: 33%'">Tous</div>
+    <div class="my-btn" @click="updateFilter(1, 'files')" :style="linkStyle[1] + 'display: inline-block; min-width: 33%'">Mes fichiers</div>
+    <div class="my-btn" @click="updateFilter(2, 'favorites')" :style="linkStyle[2] + 'display: inline-block; min-width: 33%'">Favoris</div>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      linkStyle: ['background-color: #16181f', '', '']
+      linkStyle: ['background-color: #16181f;', '', '']
     }
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
 }
 
 .filter {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
 }
 
