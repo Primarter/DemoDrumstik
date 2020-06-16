@@ -1,11 +1,11 @@
 <template>
   <div class="full-page">
+    <div class="library-banner">
+      <h3>Bibliothèque</h3>
+      <Search />
+      <Filters />
+    </div>
     <div class="vertical-list">
-      <div class="library-banner">
-        <h3>Bibliothèque</h3>
-        <Search style="height: 5%" />
-        <Filters style="height: 5%" />
-      </div>
       <h1 v-if="results.length == 0" class="hint">No results</h1>
       <div v-for="lesson in results">
         <Post
@@ -80,21 +80,6 @@ export default {
 </script>
 
 <style>
-.details {
-  float: left;
-  margin: 0 auto;
-  display: flex;
-  width: 75%;
-  min-height: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  border: 2px solid #21242d;
-  background-color: #4a4e5e;
-  padding: 2px;
-}
-
 .full-page {
   margin: 0 auto;
   min-height: 100vh;
@@ -107,7 +92,12 @@ export default {
   background-color: #21242d;
   color: white;
   text-align: center;
-  min-height: 50px;
+  min-height: 20vh;
+  height: 20vh;
+  position: absolute;
+  width: 30%;
+  min-width: 30%;
+  border-bottom: solid #60dfe8 3px;
 }
 
 .hint {

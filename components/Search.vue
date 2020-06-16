@@ -19,7 +19,6 @@
         <a @click="updateSearch('resume')">Résumé</a>
         <a @click="updateSearch('description')">Description</a>
         <a @click="updateSearch('skills')">Technique</a>
-        <a @click="updateSearch('duration')">Durée</a>
       </div>
     </div>
   </div>
@@ -74,8 +73,8 @@ export default {
     onKeyUp () {
       const str = event.target.value.toLowerCase().substring(0, 3)
       const filteredArr = this.lessons.filter((x) => {
-        const xSub = x[this.search].substring(0, 3).toLowerCase()
-        return x[this.search].toLowerCase().includes(str) || this.checkName(xSub, str)
+        const xSub = x[this.search].toString().substring(0, 3).toLowerCase()
+        return x[this.search].toString().toLowerCase().includes(str) || this.checkName(xSub, str)
       })
       this.$store.commit('updateResults', filteredArr)
     },
