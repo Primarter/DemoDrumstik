@@ -1,8 +1,8 @@
 <template>
   <div class="filters-wrapper">
-    <div class="my-btn filter" @click="updateFilter(0, 'all')" :style="linkStyle[0] + 'min-width: 33% !important; max-width: 33% !important; width: 33% !important'">Tous</div>
-    <div class="my-btn filter" @click="updateFilter(1, 'files')" :style="linkStyle[1] + 'min-width: 33% !important; max-width: 33% !important; width: 33% !important'">Mes fichiers</div>
-    <div class="my-btn filter" @click="updateFilter(2, 'favorites')" :style="linkStyle[2] + 'min-width: 33% !important; max-width: 33% !important; width: 33% !important'">Favoris</div>
+    <div class="my-btn filter" @click="updateFilter(0, 'all')" :style="linkStyle[0]">Tous</div>
+    <div class="my-btn filter" @click="updateFilter(1, 'files')" :style="linkStyle[1]">Mes fichiers</div>
+    <div class="my-btn filter" @click="updateFilter(2, 'favorites')" :style="linkStyle[2]">Favoris</div>
   </div>
 </template>
 
@@ -43,11 +43,11 @@ export default {
   vertical-align: middle;
   color: #60dfe8;
 }
-/* 
-background-color: rgb(22, 24, 31); min-width: 33%; max-width: 33%;
-background-color:#16181f;display:inline-block;min-width:33%;max-width:33%; */
 
 .filter {
+  min-width: 33% !important;
+  width: 33% !important;
+  max-width: 33% !important;
   display: block;
   flex-wrap: wrap;
 }
