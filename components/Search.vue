@@ -1,17 +1,17 @@
 <template>
   <div class="search-container">
-    <div style="display: table-cell; float: left">
+    <div style="display: flex; float: left; width: 10%">
       <i class="fa fa-search" style="font-size: 1.5em" />
     </div>
     <input
       ref="search-input"
       id="search-input"
       type="search"
-      style="display: inline-block; float: left"
+      style="display: flex; float: left; width: 66%"
       v-on:keyup="onKeyUp()"
       placeholder="Votre recherche"
     />
-    <div @click="toggleDropdown()" class="dropdown-wrapper" style="float: right">
+    <div @click="toggleDropdown()" class="dropdown-wrapper" style="float: right; width: 20%">
       {{ searchTrad() }}&#x25BC;
       <div ref="myDropdown" class="dropdown-content wordwrap">
         <a @click="updateSearch('title')">Titres</a>

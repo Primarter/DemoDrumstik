@@ -2,8 +2,8 @@
   <div class="full-page">
     <div class="library-banner">
       <h3>Bibliothèque</h3>
-      <Search />
-      <Filters />
+      <Search/>
+      <Filters/>
     </div>
     <div class="vertical-list">
       <h1 v-if="results.length == 0" class="hint">No results</h1>
@@ -95,6 +95,7 @@ export default {
   min-height: 20vh;
   height: 20vh;
   position: absolute;
+  z-index: 2;
   width: 30%;
   min-width: 30%;
   border-bottom: solid #60dfe8 3px;

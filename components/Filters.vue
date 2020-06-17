@@ -59,6 +59,5 @@ export default {
   display: table-cell;
   text-align: center;
   color: #60dfe8;
-  font-size: 18px;
 }
 </style>

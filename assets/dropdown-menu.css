@@ -16,12 +16,10 @@
 
 .dropdown-wrapper {
   cursor: pointer;
-  width: 25%;
   font-size: 14px;
-  display: inline-block;
+  display: flex;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -31,7 +29,6 @@
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   font-size: 14px;
   color: black;

@@ -2,28 +2,29 @@
   <div class="details-container">
     <div v-if="activePost != null" class="details-active-wrapper">
       <div class="top-banner">
-        <h3 style="width: 100%">Détails
-        </h3>
+        <h3 style="width: 100%">Détails</h3>
         <i @click="likeItem(activePost.id)" :class="heartClass" style="margin: auto" />
       </div>
-      <iframe
-        frameBorder="0"
-        width="100%"
-        height="40%"
-        :src="activePost.videoUrl"
-        class="video-player"
-      />
-      <div style="padding: 1%">
-        <Stars :level="activePost.level" :scale="36" style="float: right" />
-        <h1>{{ activePost.title }}</h1>
-        <b style="float: right">{{ activePost.style.toUpperCase() }}</b>
-        <p style="font-size: 15px">
-          <i class="fa fa-clock-o"></i> {{ formatTime(activePost.duration) + formatSkills(activePost.skills) }}
-        </p>
-      </div>
-      <div style="padding: 1%">
-        <p v-html="activePost.resume">{{ activePost.resume }}</p><br />
-        <p v-html="activePost.description">{{ activePost.description }}</p>
+      <div style="position: relative; height: 50%">
+        <iframe
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          :src="activePost.videoUrl"
+          class="video-player"
+        />
+        <div style="padding: 1%">
+          <Stars :level="activePost.level" :scale="36" style="float: right" />
+          <h1>{{ activePost.title }}</h1>
+          <b style="float: right">{{ activePost.style.toUpperCase() }}</b>
+          <p style="font-size: 15px">
+            <i class="fa fa-clock-o"></i> {{ formatTime(activePost.duration) + formatSkills(activePost.skills) }}
+          </p>
+        </div>
+        <div style="padding: 1%">
+          <p v-html="activePost.resume">{{ activePost.resume }}</p><br />
+          <p v-html="activePost.description">{{ activePost.description }}</p>
+        </div>
       </div>
     </div>
     <div v-else class="awaiting-selection">
@@ -89,8 +90,7 @@ export default {
   width: 75%;
   min-height: 100%;
   color: white;
-  border: 2px solid #21242d;
-  background-color: #4a4e5e;
+  background-color: #2c303c;
   display: flex;
 }
 
@@ -108,8 +108,13 @@ export default {
 }
 
 .top-banner {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color:  #4a4e5e;
   display: flex;
-  height: 7.5%;
+  height: 10%;
   min-height: 50px;
   width: 100%;
   padding: 0.5em;
