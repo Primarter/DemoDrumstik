@@ -6,7 +6,8 @@ export const state = () => ({
   winWidth: 1280,
   winHeight: 720,
   search: 'title',
-  heartClass: 'fa fa-heart fa-2x'
+  heartClass: 'fa fa-heart fa-2x',
+  page: 'Details'
 })
 
 export const getters = {
@@ -33,6 +34,9 @@ export const getters = {
   },
   heartClass(state) {
     return state.heartClass;
+  },
+  page(state) {
+    return state.page;
   }
 }
 
@@ -62,6 +66,9 @@ export const mutations = {
   },
   updateSearch(state, newSearch) {
     state.search = newSearch;
+  },
+  updatePage(state, newPage) {
+    state.page = newPage;
   },
   updateActive(state, postId) {
     state.activePost = state.lessons[getPostIndById(state.lessons, postId)];

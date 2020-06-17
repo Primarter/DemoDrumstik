@@ -12,6 +12,7 @@
           height="100%"
           :src="activePost.videoUrl"
           class="video-player"
+          allowfullscreen
         />
         <div style="padding: 1%">
           <Stars :level="activePost.level" :scale="36" style="float: right" />
@@ -111,7 +112,7 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1;
   background-color:  #4a4e5e;
   display: flex;
   height: 10%;

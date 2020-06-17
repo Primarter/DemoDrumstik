@@ -11,7 +11,7 @@
       v-on:keyup="onKeyUp()"
       placeholder="Votre recherche"
     />
-    <div @click="toggleDropdown()" class="dropdown-wrapper" style="float: right; width: 20%">
+    <div @click="toggleDropdown()" class="dropdown-wrapper" style="float: right; width: 20%;">
       {{ searchTrad() }}&#x25BC;
       <div ref="myDropdown" class="dropdown-content wordwrap">
         <a @click="updateSearch('title')">Titres</a>

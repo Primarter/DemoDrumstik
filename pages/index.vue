@@ -1,9 +1,9 @@
 <template>
   <div class="full-page">
     <div class="library-banner">
-      <h3>Bibliothèque</h3>
-      <Search/>
-      <Filters/>
+      <h3 style="height: 34%; margin: 0;">Bibliothèque</h3>
+      <Search style="height: 26%" />
+      <Filters style="height: 40%" />
     </div>
     <div class="vertical-list">
       <h1 v-if="results.length == 0" class="hint">No results</h1>
@@ -17,12 +17,26 @@
         />
       </div>
     </div>
-    <Details />
+    <Details v-if="page == 'Details'" style="margin-bottom: 7.5vh"/>
+    <div v-else class="dummy-page">
+      <h1 style="margin-bottom: 5%">Development in progress</h1>
+      <div style="position: relative; height: 50%; width: 70%;">
+        <iframe
+          width="100%"
+          height="100%"
+          frameBorder="0"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          class="video-player"
+        />
+      </div>
+    </div>
+    <Footer style="left: 30%; width: 70%"/>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import Footer from '@/components/Footer'
 import Filters from '@/components/Filters'
 import Search from '@/components/Search'
 import Post from '@/components/Post'
@@ -33,7 +47,8 @@ export default {
     Filters,
     Search,
     Post,
-    Details
+    Details,
+    Footer
   },
   computed: {
     ...mapGetters({
@@ -41,7 +56,8 @@ export default {
       results: 'results',
       liked: 'liked',
       activePost: 'activePost',
-      filter: 'filter'
+      filter: 'filter',
+      page: 'page'
     })
   },
   methods: {
@@ -81,7 +97,7 @@ export default {
 
 <style>
 .full-page {
-  margin: 0 auto;
+  margin: 0;
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
@@ -99,6 +115,16 @@ export default {
   width: 30%;
   min-width: 30%;
   border-bottom: solid #60dfe8 3px;
+}
+
+.dummy-page {
+  padding: 2.5%;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 70%;
+  background-color: #21242d;
+  color: white;
 }
 
 .hint {
