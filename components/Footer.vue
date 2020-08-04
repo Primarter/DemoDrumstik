@@ -50,22 +50,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+
+  @import "~/assets/css/devices.less";
+
   .footer-container {
     position: absolute;
     bottom: 0;
     height: 40px;
-    width: 320px;
+    width: inherit;
     color: white;
-    background-color: #2c303c;
-    border-top: solid #60dfe8 3px;
-  }
-
-  @media screen and (max-width: 1000px) {
-    .library-banner { width: 290px; };
-  }
-  @media screen and (max-width: 800px) {
-    .library-banner { width: 260px; };
+    background-color: @light-background;
+    border-top: solid @neon-blue 3px;
   }
 
   .footer-btn {
@@ -84,9 +80,9 @@ export default {
     top: 10%;
     width: 1px;
     height: 80%;
-    border-right: 1px solid #60dfe8;
+    border-right: 1px solid @neon-blue;
   }
   .footer-btn:active .footer-btn:focus {
-    border-bottom: 3px solid #60dfe8;
+    border-bottom: 3px solid @neon-blue;
   }
 </style>

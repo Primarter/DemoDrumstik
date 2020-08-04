@@ -1,6 +1,6 @@
 .vertical-list {
+  width: inherit;
   display: block;
-  width: 320px;
   overflow-y: auto;
   -ms-overflow-style: none;
 }

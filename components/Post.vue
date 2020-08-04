@@ -35,16 +35,19 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+
+  @import '~/assets/css/devices.less';
+
   .post {
     font-size: 11px;
-    background-color: #21242d;
+    background-color: @dark-background;
     color: white;
     padding: 0;
     text-decoration: none;
     display: flow-root;
     height: 80px;
-    border-bottom: solid #60dfe8 1px;
+    border-bottom: solid @neon-blue 1px;
   }
 
   .post:hover {
@@ -52,14 +55,14 @@ export default {
   }
 
   .active-post {
-    border-left: solid #60dfe8 3px;
+    border-left: solid @neon-blue 3px;
     background-color: #4d5261;
     color: white;
     padding: 0;
     text-decoration: none;
     display: flow-root;
     height: 80px;
-    border-bottom: solid #60dfe8 1px;
+    border-bottom: solid @neon-blue 1px;
   }
   .post h4, p {
     margin: 0;

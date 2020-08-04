@@ -6,14 +6,17 @@
         <i @click="likeItem(activePost.id)" :class="heartClass" />
       </div>
       <div class="details-content">
-        <iframe
-          frameBorder="0"
-          width="100%"
-          height="100%"
-          :src="activePost.videoUrl"
-          class="video-player"
-          allowfullscreen
-        />
+        <div class="video-positioning">
+          <div class="video-wrapper">
+            <iframe
+              frameBorder="0"
+              width="100%"
+              height="100%"
+              :src="activePost.videoUrl"
+              allowfullscreen
+            />
+          </div>
+        </div>
         <div>
           <Stars :level="activePost.level" :scale="30" style="float: right;"/>
           <h1>{{ activePost.title }}</h1>
@@ -85,11 +88,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+
+  @import '~/assets/css/devices.less';
+
   .details-container {
     display: flex;
     color: white;
-    background-color: #2c303c;
+    background-color: @light-background;
   }
 
   .details-container .details-active-wrapper {
@@ -113,10 +119,9 @@ export default {
     position: sticky;
     top: 0;
     z-index: 1;
-    background-color:  #4a4e5e;
+    background-color:  @banner-color;
     display: flex;
-    height: 10%;
-    min-height: 50px;
+    height: 68px;
     width: 100%;
     padding: 0.5em;
     justify-content: center;
@@ -139,17 +144,36 @@ export default {
   }
 
   .details-container .awaiting-selection {
+    width: 100%;
+    height: 100%;
     display: flex;
   }
 
-  .details-container .video-player {
-    min-height: 200px;
+  .details-content .video-positioning {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .video-positioning .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25% !important;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     border-top-width: 0px;
     border-right-width: 0px;
     border-bottom-width: 3px;
     border-left-width: 0px;
     border-style: inset;
-    border-color: #60dfe8;
+    border-color: @neon-blue;
     border-image: initial;
   }
 </style>

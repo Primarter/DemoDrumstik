@@ -1,3 +1,5 @@
+@import "./devices.less";
+
 .page-enter-active, .page-leave-active {
     transition: opacity .5s;
 }
@@ -7,14 +9,14 @@
 }
 
 .my-btn {
-  background-color: #21242d;
-  color: #60dfe8;
+  background-color: @dark-background;
+  color: @neon-blue;
   border: none;
   cursor: pointer;
 }
 
 .my-btn:hover, .my-btn:focus {
-  background-color: #16181f;
+  background-color: @focus-background;
   outline: none;
 }
 
@@ -38,29 +40,43 @@ input:focus
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
-  background-color: #21242d;
+  background-color: @dark-background;
 }
 
 .library-wrapper {
   display: flex;
   flex-direction: column;
+  width: 320px;
 }
 
 .library-banner {
+  width: inherit;
   display: block;
-  background-color: #21242d;
+  background-color: @dark-background;
   color: white;
   text-align: center;
   height: 159px;
-  width: 320px;
-  border-bottom: solid #60dfe8 3px;
+  border-bottom: solid @neon-blue 3px;
+}
+
+@media @tablets {
+  min-width: @library-width-tablets;
+  max-width: @library-width-tablets;
+}
+@media @desktop {
+  min-width: @library-width-desktop;
+  max-width: @library-width-desktop;
+}
+@media @medium-desktop {
+  min-width: @library-width-desktop;
+  max-width: @library-width-desktop;
 }
 
 @media screen and (max-width: 1000px) {
-  .library-banner { width: 290px; font-size: 14px; };
+  .library-wrapper { width: 290px; font-size: 14px; };
 }
 @media screen and (max-width: 800px) {
-  .library-banner { width: 260px; font-size: 12px; };
+  .library-wrapper { width: 260px; font-size: 12px; };
 }
 
 .library-banner h3 { height: 68px; margin: 0; }
@@ -73,7 +89,7 @@ input:focus
   align-items: center;
   text-align: center;
   min-width: 70%;
-  background-color: #21242d;
+  background-color: @dark-background;
   color: white;
 }
 
@@ -81,7 +97,7 @@ input:focus
 .dummy-page div { position: relative; height: 50%; width: 70%; }
 
 .full-page Details {
-  margin-bottom: 7.5vh;
+  margin-bottom: 5vh;
 }
 
 .hint {

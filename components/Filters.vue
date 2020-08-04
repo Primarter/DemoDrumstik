@@ -35,29 +35,33 @@ export default {
 
 </script>
 
-<style>
-.filters-wrapper {
-  text-align: center;
-  width: 100%;
-  display: table;
-  vertical-align: middle;
-  color: #60dfe8;
-}
+<style lang="less">
 
-.filter {
-  min-width: 33% !important;
-  width: 33% !important;
-  max-width: 33% !important;
-  display: block;
-  flex-wrap: wrap;
-}
 
-.filters-wrapper .filter {
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  display: table-cell;
-  text-align: center;
-  color: #60dfe8;
-}
+  @import '~/assets/css/devices.less';
+
+  .filters-wrapper {
+    text-align: center;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+    color: @neon-blue;
+  }
+
+  .filter {
+    min-width: 33% !important;
+    width: 33% !important;
+    max-width: 33% !important;
+    display: block;
+    flex-wrap: wrap;
+  }
+
+  .filters-wrapper .filter {
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    display: table-cell;
+    text-align: center;
+    color: @neon-blue;
+  }
 </style>
