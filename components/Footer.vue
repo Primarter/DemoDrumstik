@@ -17,42 +17,6 @@
   </div>
 </template>
 
-<style>
-.footer-container {
-  width: 100%;
-  height: 7.5vh;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  color: white;
-  background-color: #2c303c;
-  border-top: solid #60dfe8 3px;
-}
-
-.footer-btn {
-  min-height: 100%;
-  width: 12.5%;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  z-index : 1;
-}
-
-.footer-btn::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 10%;
-  width: 1px;
-  height: 80%;
-  border-right: 1px solid #60dfe8;
-}
-.footer-btn:active .footer-btn:focus {
-  border-bottom: 3px solid #60dfe8;
-}
-
-</style>
-
 <script>
 import { mapGetters } from 'vuex'
 
@@ -85,3 +49,44 @@ export default {
   },
 }
 </script>
+
+<style>
+  .footer-container {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 320px;
+    color: white;
+    background-color: #2c303c;
+    border-top: solid #60dfe8 3px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .library-banner { width: 290px; };
+  }
+  @media screen and (max-width: 800px) {
+    .library-banner { width: 260px; };
+  }
+
+  .footer-btn {
+    min-height: 100%;
+    width: 12.5%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    z-index : 1;
+  }
+
+  .footer-btn::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 1px;
+    height: 80%;
+    border-right: 1px solid #60dfe8;
+  }
+  .footer-btn:active .footer-btn:focus {
+    border-bottom: 3px solid #60dfe8;
+  }
+</style>

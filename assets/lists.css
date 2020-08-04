@@ -1,12 +1,14 @@
 .vertical-list {
-  position: relative;
-  top: 20vh;
-  float: left;
-  min-width: 30%;
-  width: 30%;
-  height: 80vh;
+  display: block;
+  width: 320px;
   overflow-y: auto;
   -ms-overflow-style: none;
+}
+@media screen and (max-width: 1000px) {
+  .vertical-list { width: 290px };
+}
+@media screen and (max-width: 800px) {
+  .vertical-list { width: 260px };
 }
 
 .vertical-list::-webkit-scrollbar {

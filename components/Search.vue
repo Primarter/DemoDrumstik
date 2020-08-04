@@ -1,17 +1,16 @@
 <template>
   <div class="search-container">
-    <div style="display: flex; float: left; width: 10%">
-      <i class="fa fa-search" style="font-size: 1.5em" />
+    <div class="search-icon-wrapper">
+      <i class="fa fa-search" />
     </div>
     <input
       ref="search-input"
       id="search-input"
       type="search"
-      style="display: flex; float: left; width: 66%"
       v-on:keyup="onKeyUp()"
       placeholder="Votre recherche"
     />
-    <div @click="toggleDropdown()" class="dropdown-wrapper" style="float: right; width: 20%;">
+    <div @click="toggleDropdown()" class="dropdown-wrapper search-dropdown">
       {{ searchTrad() }}&#x25BC;
       <div ref="myDropdown" class="dropdown-content wordwrap">
         <a @click="updateSearch('title')">Titres</a>
@@ -23,25 +22,6 @@
     </div>
   </div>
 </template>
-
-<style>
-.search-container {
-  float: left;
-  min-width: 100%;
-  padding: 2%;
-  color: black;
-  background-color: #ffffff;
-  display: table;
-}
-.search-container input {
-  font-size: 18px;
-  display: table-cell;
-  padding-left: 5px;
-  margin-bottom: 0px;
-  border: 0;
-  box-shadow: none;
-}
-</style>
 
 <script>
 import { mapGetters } from 'vuex'
@@ -105,3 +85,44 @@ export default {
   }
 }
 </script>
+
+<style>
+.search-container {
+  float: left;
+  padding: 2%;
+  color: black;
+  background-color: #ffffff;
+}
+.search-container input {
+  display: flex;
+  float: left;
+  width: 60%;
+  font-size: 18px;
+  padding-left: 5px;
+  margin-bottom: 0px;
+  border: 0;
+  box-shadow: none;
+}
+@media screen and (max-width: 1000px) {
+  .search-container input {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .search-container input {
+    font-size: 14px;
+  }
+}
+.search-icon-wrapper { display: flex; float: left; width: 10% }
+.search-icon-wrapper i { font-size: 1.5em; }
+
+.search-dropdown { display: flex; float: right; width: 20%; }
+
+.wordwrap {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+</style>
