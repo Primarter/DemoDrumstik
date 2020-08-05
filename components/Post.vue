@@ -48,14 +48,23 @@ export default {
     display: flow-root;
     height: 80px;
     border-bottom: solid @neon-blue 1px;
+    padding-top: 3px;
   }
 
   .post:hover {
+    cursor: pointer;
     background-color: #4d5261;
+    animation-name: post-click;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes post-click {
+    from { background-color: @dark-background; padding: 3px 0 0 0; }
+    to { background-color: #4d5261; padding: 3px 0 0 5px; }
   }
 
   .active-post {
-    border-left: solid @neon-blue 3px;
     background-color: #4d5261;
     color: white;
     padding: 0;
@@ -63,6 +72,9 @@ export default {
     display: flow-root;
     height: 80px;
     border-bottom: solid @neon-blue 1px;
+    animation-name: post-click;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
   }
   .post h4, p {
     margin: 0;

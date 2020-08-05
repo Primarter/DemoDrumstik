@@ -1,12 +1,12 @@
 <template>
   <div class="footer-container">
-    <div class="footer-btn my-btn" @click="updatePage(0, 'Details')" :style="btnStyle[0]">
+    <div :class="focusBtnClass[0]" @click="updatePage(0, 'Details')">
       <i class="fa fa-book" style="font-size: 1.5em" />
     </div><!--
- --><div class="footer-btn my-btn" @click="updatePage(1, 'Graph')" :style="btnStyle[1]">
+ --><div :class="focusBtnClass[1]" @click="updatePage(1, 'Graph')">
       <i class="fa fa-line-chart" style="font-size: 1.5em" />
     </div><!--
- --><div class="footer-btn my-btn" @click="updatePage(2, 'Calendar')" :style="btnStyle[2]">
+ --><div :class="focusBtnClass[2]" @click="updatePage(2, 'Calendar')">
       <i class="fa fa-calendar" style="font-size: 1.5em" />
     </div>
     <a v-if="activePost" :href="activePost.videoUrl" target="_blank">
@@ -23,7 +23,7 @@ import { mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      btnStyle: ['background-color: #16181f;', '', '']
+      focusBtnClass: ['footer-btn my-btn btn-focus', 'footer-btn my-btn', 'footer-btn my-btn'],
     }
   },
   computed: {
@@ -37,11 +37,11 @@ export default {
       this.$store.commit('updatePage', newPage);
     },
     updatePage(idx, newPage) {
-      for (let i = 0; i < this.btnStyle.length; i++) {
-        if (i == idx) {
-          this.$set(this.btnStyle, i, 'background-color: #16181f');
+      for (let i = 0; i < this.focusBtnClass.length; i++) {
+        if (i == idx && this.focusBtnClass[i].search(" btn-focus") == -1) {
+          this.$set(this.focusBtnClass, i, this.focusBtnClass[i] + " btn-focus")
         } else {
-          this.$set(this.btnStyle, i, '');
+          this.$set(this.focusBtnClass, i, this.focusBtnClass[i].replace(" btn-focus", ""));
         }
       }
       this.$store.commit('updatePage', newPage);
@@ -53,6 +53,11 @@ export default {
 <style lang="less">
 
   @import "~/assets/css/devices.less";
+
+  @keyframes filter-click {
+    from { background-color: @dark-background; }
+    to { background-color: @focus-background; }
+  }
 
   .footer-container {
     position: absolute;
@@ -82,6 +87,13 @@ export default {
     height: 80%;
     border-right: 1px solid @neon-blue;
   }
+
+  .footer-btn:hover {
+    animation-name: filter-click;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
   .footer-btn:active .footer-btn:focus {
     border-bottom: 3px solid @neon-blue;
   }

@@ -45,7 +45,7 @@ export default {
    */
   css: [
     '~/assets/css/main.less',
-    '~/assets/css/lists.css',
+    '~/assets/css/lists.less',
     '~/assets/css/dropdown-menu.less',
     '~/assets/css/devices.less'
   ],

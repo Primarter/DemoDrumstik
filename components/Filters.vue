@@ -1,8 +1,8 @@
 <template>
   <div class="filters-wrapper">
-    <div class="my-btn filter" @click="updateFilter(0, 'all')" :style="linkStyle[0]">Tous</div>
-    <div class="my-btn filter" @click="updateFilter(1, 'files')" :style="linkStyle[1]">Mes fichiers</div>
-    <div class="my-btn filter" @click="updateFilter(2, 'favorites')" :style="linkStyle[2]">Favoris</div>
+    <div :class="focusBtnClass[0]" @click="updateFilter(0, 'all')">Tous</div>
+    <div :class="focusBtnClass[1]" @click="updateFilter(1, 'files')">Mes fichiers</div>
+    <div :class="focusBtnClass[2]" @click="updateFilter(2, 'favorites')">Favoris</div>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      linkStyle: ['background-color: #16181f;', '', '']
+      focusBtnClass: ['my-btn filter btn-focus', 'my-btn filter', 'my-btn filter'],
     }
   },
   computed: {
@@ -20,11 +20,11 @@ export default {
   },
   methods: {
     updateFilter(idx, newFilter) {
-      for (let i = 0; i < this.linkStyle.length; i++) {
-        if (i == idx) {
-          this.$set(this.linkStyle, i, 'background-color: #16181f');
+      for (let i = 0; i < this.focusBtnClass.length; i++) {
+        if (i == idx && this.focusBtnClass[i].search(" btn-focus") == -1) {
+          this.$set(this.focusBtnClass, i, this.focusBtnClass[i] + " btn-focus")
         } else {
-          this.$set(this.linkStyle, i, '');
+          this.$set(this.focusBtnClass, i, this.focusBtnClass[i].replace(" btn-focus", ""));
         }
       }
       this.$store.commit('updateFilter', newFilter);
@@ -39,6 +39,11 @@ export default {
 
 
   @import '~/assets/css/devices.less';
+
+  @keyframes filter-click {
+    from { background-color: @dark-background; }
+    to { background-color: @focus-background; }
+  }
 
   .filters-wrapper {
     text-align: center;
