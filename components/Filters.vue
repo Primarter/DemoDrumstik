@@ -1,38 +1,17 @@
 <template>
   <div class="filters-wrapper">
-    <div :class="focusBtnClass[0]" @click="updateFilter(0, 'all')">Tous</div>
-    <div :class="focusBtnClass[1]" @click="updateFilter(1, 'files')">Mes fichiers</div>
-    <div :class="focusBtnClass[2]" @click="updateFilter(2, 'favorites')">Favoris</div>
+    <div :class="'my-btn filter' + focusBtnClass[0]" @click="updateBtn(0, 'all', 'updateFilter')">Tous</div>
+    <div :class="'my-btn filter' + focusBtnClass[1]" @click="updateBtn(1, 'files', 'updateFilter')">Mes fichiers</div>
+    <div :class="'my-btn filter' + focusBtnClass[2]" @click="updateBtn(2, 'favorites', 'updateFilter')">Favoris</div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      focusBtnClass: ['my-btn filter btn-focus', 'my-btn filter', 'my-btn filter'],
-    }
-  },
-  computed: {
-    filter() {
-      return this.$store.getters.filter
-    }
-  },
-  methods: {
-    updateFilter(idx, newFilter) {
-      for (let i = 0; i < this.focusBtnClass.length; i++) {
-        if (i == idx && this.focusBtnClass[i].search(" btn-focus") == -1) {
-          this.$set(this.focusBtnClass, i, this.focusBtnClass[i] + " btn-focus")
-        } else {
-          this.$set(this.focusBtnClass, i, this.focusBtnClass[i].replace(" btn-focus", ""));
-        }
-      }
-      this.$store.commit('updateFilter', newFilter);
-      console.log('Results now filtered by ' +  this.filter);
-    }
-  }
-}
+import btnFocus from '@/mixins/btnFocus'
 
+export default {
+  mixins: [btnFocus],
+}
 </script>
 
 <style lang="less">

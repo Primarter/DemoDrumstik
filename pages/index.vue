@@ -20,10 +20,11 @@
       </div>
       <Footer />
     </div>
-    <Details v-if="page == 'Details'" />
-    <div v-else class="dummy-page">
-      <h1>Development in progress</h1>
-      <div>
+    <base-highlight v-if="activePost" :title="page" :showLike="page == 'Détails'">
+      <Details v-if="page == 'Détails'" />
+      <Graph v-else-if="page == 'Performances'" />
+      <div v-else class="dummy-page">
+        <h1>Development in progress</h1>
         <iframe
           width="100%"
           height="100%"
@@ -31,6 +32,12 @@
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
           class="video-player"
         />
+        </div>
+    </base-highlight>
+    <div v-else class="awaiting-selection">
+      <div class="centered-items">
+        <img src="https://drumstik.com/wp-content/themes/Drumstik_Theme/img/logo-text.png" alt="Drumstik" width="500px"/>
+        <h1><i class="fa fa-arrow-left" /> Sélectionnez un cours sur le panneau de gauche</h1>
       </div>
     </div>
   </div>
@@ -42,15 +49,19 @@ import Footer from '@/components/Footer'
 import Filters from '@/components/Filters'
 import Search from '@/components/Search'
 import Post from '@/components/Post'
+import BaseHighlight from '@/components/BaseHighlight'
 import Details from '@/components/Details'
+import Graph from '@/components/Graph'
 
 export default {
   components: {
+    Footer,
     Filters,
     Search,
     Post,
+    BaseHighlight,
     Details,
-    Footer
+    Graph
   },
   computed: {
     ...mapGetters({

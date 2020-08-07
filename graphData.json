@@ -1,0 +1,453 @@
+[
+  {
+    "id": 1,
+    "uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+    "title": "Rock 70s - Breaks",
+    "style": "ROCK",
+    "level": 2,
+    "videoUrl": "https:\/\/player.vimeo.com\/video\/435652232",
+    "duration": 375,
+    "skills": "POWERTRIPLETS;CREATIVITY;COORDINATION;FLAMS;INDEPENDENCE",
+    "created_at": "2020-03-29 16:16:21",
+    "updated_at": "2020-07-08 14:49:00",
+    "title_fr": "",
+    "resources": [
+      {
+        "id": 175,
+        "name": "1586544257-BFM-header.png",
+        "url": "http:\/\/dev.drumstik.com\/storage\/content\/d21f509e-dc80-4ee2-97db-dd6ce3ef7d22\/1586544257-BFM-header.png",
+        "type": "resource.banner"
+      },
+      {
+        "id": 188,
+        "name": "tommy.jpg",
+        "url": "http:\/\/dev.drumstik.com\/storage\/content\/d21f509e-dc80-4ee2-97db-dd6ce3ef7d22\/tommy.jpg",
+        "type": "resource.thumbnail"
+      },
+      {
+        "uuid": "74da4431-0f1d-4192-82c8-ebac3f8943bc",
+        "id": 227,
+        "name": "demo drumstik POP-1.dsk",
+        "url": "http:\/\/dev.drumstik.com\/storage\/content\/d21f509e-dc80-4ee2-97db-dd6ce3ef7d22\/demo drumstik POP-1.dsk",
+        "type": "resource.file"
+      },
+      {
+        "uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "id": 228,
+        "name": "WikiTraining 1-1.dsk",
+        "url": "http:\/\/dev.drumstik.com\/storage\/content\/d21f509e-dc80-4ee2-97db-dd6ce3ef7d22\/WikiTraining 1-1.dsk",
+        "type": "resource.file"
+      }
+    ],
+    "performances": [
+      {
+        "id": 3,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 85,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-25 13:19:03",
+        "updated_at": "2020-06-25 13:19:03"
+      },
+      {
+        "id": 4,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 85,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-25 13:19:53",
+        "updated_at": "2020-06-25 13:19:53"
+      },
+      {
+        "id": 5,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 85,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-25 13:20:48",
+        "updated_at": "2020-06-25 13:20:48"
+      },
+      {
+        "id": 6,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 85,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-25 13:21:32",
+        "updated_at": "2020-06-25 13:21:32"
+      },
+      {
+        "id": 7,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 85,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-25 13:22:09",
+        "updated_at": "2020-06-25 13:22:09"
+      },
+      {
+        "id": 8,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 29.166666666666664,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 07:10:33",
+        "updated_at": "2020-06-29 07:10:33"
+      },
+      {
+        "id": 9,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 83.33333333333334,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 07:10:51",
+        "updated_at": "2020-06-29 07:10:51"
+      },
+      {
+        "id": 10,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 95.83333333333334,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 07:11:15",
+        "updated_at": "2020-06-29 07:11:15"
+      },
+      {
+        "id": 11,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 29.166666666666664,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 07:23:41",
+        "updated_at": "2020-06-29 07:23:41"
+      },
+      {
+        "id": 12,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 83.33333333333334,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 07:24:02",
+        "updated_at": "2020-06-29 07:24:02"
+      },
+      {
+        "id": 13,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 29,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 12:27:07",
+        "updated_at": "2020-06-29 12:27:07"
+      },
+      {
+        "id": 14,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 54,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-06-29 12:27:27",
+        "updated_at": "2020-06-29 12:27:27"
+      },
+      {
+        "id": 16,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 83.33333333333334,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-07-10 21:21:17",
+        "updated_at": "2020-07-10 21:21:17"
+      },
+      {
+        "id": 17,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 83.33333333333334,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-07-10 21:27:20",
+        "updated_at": "2020-07-10 21:27:20"
+      },
+      {
+        "id": 18,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 54.16666666666667,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-07-10 21:27:20",
+        "updated_at": "2020-07-10 21:27:20"
+      },
+      {
+        "id": 19,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 95,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-08-06 07:28:17",
+        "updated_at": "2020-08-06 07:28:17"
+      },
+      {
+        "id": 20,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 66,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-08-06 07:28:31",
+        "updated_at": "2020-08-06 07:28:31"
+      },
+      {
+        "id": 21,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 95,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-08-06 07:28:46",
+        "updated_at": "2020-08-06 07:28:46"
+      },
+      {
+        "id": 22,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "percent": 12,
+        "tempo": "80-16-0-1-1",
+        "tolerance": 85,
+        "created_at": "2020-08-06 07:29:02",
+        "updated_at": "2020-08-06 07:29:02"
+      }
+    ],
+    "stopwatches": [
+      {
+        "id": 2,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "percent": 54,
+        "numCycles": 2,
+        "created_at": "2020-06-29 16:15:56",
+        "updated_at": "2020-06-29 16:15:56",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "cycles": [
+          {
+            "id": 1,
+            "fk_stopwatch": 2,
+            "duration": 8000,
+            "restDuration": 5000,
+            "created_at": "2020-06-29 16:15:56",
+            "updated_at": "2020-06-29 16:15:56",
+            "performance": []
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "percent": 54,
+        "numCycles": 2,
+        "created_at": "2020-06-29 20:28:36",
+        "updated_at": "2020-06-29 20:28:36",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "cycles": [
+          {
+            "id": 2,
+            "fk_stopwatch": 3,
+            "duration": 8000,
+            "restDuration": 5000,
+            "created_at": "2020-06-29 20:28:36",
+            "updated_at": "2020-06-29 20:28:36",
+            "performance": [
+              {
+                "id": 1,
+                "fk_stopwatch_cycle": 2,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 54,
+                "tempo": "60-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-29 20:28:36",
+                "updated_at": "2020-06-29 20:28:36"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "fk_stopwatch": 3,
+            "duration": 8000,
+            "restDuration": 5000,
+            "created_at": "2020-06-29 20:28:36",
+            "updated_at": "2020-06-29 20:28:36",
+            "performance": [
+              {
+                "id": 2,
+                "fk_stopwatch_cycle": 3,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 54,
+                "tempo": "60-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-29 20:28:36",
+                "updated_at": "2020-06-29 20:28:36"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "percent": 84,
+        "numCycles": 3,
+        "created_at": "2020-06-29 21:08:09",
+        "updated_at": "2020-06-29 21:08:09",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "cycles": [
+          {
+            "id": 4,
+            "fk_stopwatch": 4,
+            "duration": 8000,
+            "restDuration": 5000,
+            "created_at": "2020-06-29 21:08:09",
+            "updated_at": "2020-06-29 21:08:09",
+            "performance": [
+              {
+                "id": 3,
+                "fk_stopwatch_cycle": 4,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 83,
+                "tempo": "60-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-29 21:08:09",
+                "updated_at": "2020-06-29 21:08:09"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "fk_stopwatch": 4,
+            "duration": 8000,
+            "restDuration": 5000,
+            "created_at": "2020-06-29 21:08:09",
+            "updated_at": "2020-06-29 21:08:09",
+            "performance": [
+              {
+                "id": 4,
+                "fk_stopwatch_cycle": 5,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 85,
+                "tempo": "64-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-29 21:08:09",
+                "updated_at": "2020-06-29 21:08:09"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "fk_stopwatch": 4,
+            "duration": 8000,
+            "restDuration": 5000,
+            "created_at": "2020-06-29 21:08:09",
+            "updated_at": "2020-06-29 21:08:09",
+            "performance": [
+              {
+                "id": 5,
+                "fk_stopwatch_cycle": 6,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 84,
+                "tempo": "62-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-29 21:08:09",
+                "updated_at": "2020-06-29 21:08:09"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "fk_content_uuid": "d21f509e-dc80-4ee2-97db-dd6ce3ef7d22",
+        "fk_user_uuid": "8d7e93d1-4270-4bcc-b325-db77a5b95621",
+        "percent": 83,
+        "numCycles": 2,
+        "created_at": "2020-06-30 15:48:14",
+        "updated_at": "2020-06-30 15:48:14",
+        "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+        "cycles": [
+          {
+            "id": 7,
+            "fk_stopwatch": 5,
+            "duration": 8,
+            "restDuration": 5,
+            "created_at": "2020-06-30 15:48:14",
+            "updated_at": "2020-06-30 15:48:14",
+            "performance": [
+              {
+                "id": 6,
+                "fk_stopwatch_cycle": 7,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 83,
+                "tempo": "60-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-30 15:48:14",
+                "updated_at": "2020-06-30 15:48:14"
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "fk_stopwatch": 5,
+            "duration": 8,
+            "restDuration": 5,
+            "created_at": "2020-06-30 15:48:14",
+            "updated_at": "2020-06-30 15:48:14",
+            "performance": [
+              {
+                "id": 7,
+                "fk_stopwatch_cycle": 8,
+                "fk_file_uuid": "add2f257-6fde-44f2-80a5-36eeca6f3dd6",
+                "percent": 83,
+                "tempo": "60-16-0-1-1",
+                "tolerance": 85,
+                "created_at": "2020-06-30 15:48:14",
+                "updated_at": "2020-06-30 15:48:14"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

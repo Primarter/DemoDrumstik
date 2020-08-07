@@ -1,51 +1,30 @@
 <template>
   <div class="footer-container">
-    <div :class="focusBtnClass[0]" @click="updatePage(0, 'Details')">
-      <i class="fa fa-book" style="font-size: 1.5em" />
+    <div :class="'footer-btn my-btn ' + focusBtnClass[0]" @click="updateBtn(0, 'Détails', 'updatePage')">
+      <i class="fa fa-book" style="line-height: 75px; font-size: 3em" />
     </div><!--
- --><div :class="focusBtnClass[1]" @click="updatePage(1, 'Graph')">
-      <i class="fa fa-line-chart" style="font-size: 1.5em" />
+ --><div :class="'footer-btn my-btn ' + focusBtnClass[1]" @click="updateBtn(1, 'Performances', 'updatePage')">
+      <i class="fa fa-line-chart" style="line-height: 75px; font-size: 3em" />
     </div><!--
- --><div :class="focusBtnClass[2]" @click="updatePage(2, 'Calendar')">
-      <i class="fa fa-calendar" style="font-size: 1.5em" />
+ --><div :class="'footer-btn my-btn ' + focusBtnClass[2]" @click="updateBtn(2, 'Calendrier', 'updatePage')">
+      <i class="fa fa-calendar" style="line-height: 75px; font-size: 3em" />
+    </div><!--
+ --><div v-show="activePost" :class="'footer-btn my-btn ' + focusBtnClass[3]" @click="updateBtn(3, 'Same', 'updatePage')">
+      <img src="~/assets/train.svg" alt="S'entraîner">
     </div>
-    <a v-if="activePost" :href="activePost.videoUrl" target="_blank">
-      <div class="my-btn" style="float: right">
-        S'entrainer
-      </div>
-    </a>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import btnFocus from '@/mixins/btnFocus'
 
 export default {
-  data() {
-    return {
-      focusBtnClass: ['footer-btn my-btn btn-focus', 'footer-btn my-btn', 'footer-btn my-btn'],
-    }
-  },
+  mixins: [btnFocus],
   computed: {
     ...mapGetters({
       activePost: 'activePost',
-      page: 'page'
     })
-  },
-  methods: {
-    changePage(newPage) {
-      this.$store.commit('updatePage', newPage);
-    },
-    updatePage(idx, newPage) {
-      for (let i = 0; i < this.focusBtnClass.length; i++) {
-        if (i == idx && this.focusBtnClass[i].search(" btn-focus") == -1) {
-          this.$set(this.focusBtnClass, i, this.focusBtnClass[i] + " btn-focus")
-        } else {
-          this.$set(this.focusBtnClass, i, this.focusBtnClass[i].replace(" btn-focus", ""));
-        }
-      }
-      this.$store.commit('updatePage', newPage);
-    }
   },
 }
 </script>
@@ -60,22 +39,26 @@ export default {
   }
 
   .footer-container {
-    position: absolute;
-    bottom: 0;
-    height: 40px;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3px;
     width: inherit;
     color: white;
-    background-color: @light-background;
+    background-color: @dark-background;
     border-top: solid @neon-blue 3px;
   }
 
   .footer-btn {
-    min-height: 100%;
-    width: 12.5%;
+    width: 75px;
+    height: 75px;
     text-align: center;
-    display: inline-block;
     position: relative;
-    z-index : 1;
+
+    img {
+      height: 100%;
+      width: 100%;
+      vertical-align: center;
+    }
   }
 
   .footer-btn::before {

@@ -7,7 +7,8 @@ export const state = () => ({
   winHeight: 720,
   search: 'title',
   heartClass: 'fa fa-heart fa-2x',
-  page: 'Details'
+  page: 'Details',
+  dataType: 'performances'
 })
 
 export const getters = {
@@ -37,6 +38,9 @@ export const getters = {
   },
   page(state) {
     return state.page;
+  },
+  dataType(state) {
+    return state.dataType;
   }
 }
 
@@ -83,5 +87,12 @@ export const mutations = {
     state.heartClass = 'fa fa-heart-o fa-2x';
     state.activePost.liked = false;
     state.lessons[getPostIndById(state.lessons, state.activePost.id)].liked = false;
+  },
+  toggleDataType(state) {
+    if (state.dataType == 'performances') {
+      state.dataType = 'stopwatches';
+    } else
+      state.dataType = 'performances';
+    console.log('Showing ' + state.dataType);
   }
 }
