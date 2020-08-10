@@ -84,14 +84,15 @@ export default {
       return null
     },
     checkFilter(lesson) {
-      if (this.page == 'Graphics')
-        return true;
+      if (this.page == 'Graphics' && (!lesson.performances && !lesson.stopwatches))
+        return false;
       if (this.filter == 'all')
         return true;
       if (this.filter == 'favorites' && lesson.liked == true)
         return true;
       if (this.filter == 'files')
         return true;
+      return false;
     },
     tradTitle(title) {
       switch (title) {
