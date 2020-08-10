@@ -11,6 +11,11 @@ import btnFocus from '@/mixins/btnFocus'
 
 export default {
   mixins: [btnFocus],
+  data() {
+    return {
+      focusBtnClass: [' btn-focus', '', '', '']
+    }
+  }
 }
 </script>
 

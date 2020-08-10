@@ -1,15 +1,15 @@
 <template>
   <div class="footer-container">
-    <div :class="'footer-btn my-btn ' + focusBtnClass[0]" @click="updateBtn(0, 'Détails', 'updatePage')">
+    <div :class="'footer-btn my-btn ' + focusBtnClass[0]" @click="updateBtn(0, 'Details', 'updatePage'); resetActive()">
       <i class="fa fa-book" style="line-height: 75px; font-size: 3em" />
     </div><!--
- --><div :class="'footer-btn my-btn ' + focusBtnClass[1]" @click="updateBtn(1, 'Performances', 'updatePage')">
+ --><div :class="'footer-btn my-btn ' + focusBtnClass[1]" @click="updateBtn(1, 'Graphics', 'updatePage'); resetActive()">
       <i class="fa fa-line-chart" style="line-height: 75px; font-size: 3em" />
     </div><!--
- --><div :class="'footer-btn my-btn ' + focusBtnClass[2]" @click="updateBtn(2, 'Calendrier', 'updatePage')">
+ --><div :class="'footer-btn my-btn ' + focusBtnClass[2]" @click="updateBtn(2, 'Calendrier', 'updatePage'); resetActive()">
       <i class="fa fa-calendar" style="line-height: 75px; font-size: 3em" />
     </div><!--
- --><div v-show="activePost" :class="'footer-btn my-btn ' + focusBtnClass[3]" @click="updateBtn(3, 'Same', 'updatePage')">
+ --><div v-show="activePost" :class="'footer-btn my-btn ' + focusBtnClass[3]" @click="updateBtn(3, 'Same', 'updatePage'); resetActive()">
       <img src="~/assets/train.svg" alt="S'entraîner">
     </div>
   </div>
@@ -21,10 +21,21 @@ import btnFocus from '@/mixins/btnFocus'
 
 export default {
   mixins: [btnFocus],
+  data() {
+    return {
+      focusBtnClass: [' btn-focus', '', '', '']
+    }
+  },
   computed: {
     ...mapGetters({
       activePost: 'activePost',
+      page: 'page',
     })
+  },
+  methods: {
+    resetActive() {
+      this.$store.commit('updateActive', -1);
+    }
   },
 }
 </script>
@@ -45,7 +56,7 @@ export default {
     width: inherit;
     color: white;
     background-color: @dark-background;
-    border-top: solid @neon-blue 3px;
+    border-top: solid @neon-blue 2px;
   }
 
   .footer-btn {

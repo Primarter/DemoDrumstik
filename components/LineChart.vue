@@ -1,11 +1,30 @@
 <script>
+import loadData from '~/mixins/loadData'
+import { mapGetters } from 'vuex'
 import { Line } from 'vue-chartjs'
 
 export default {
   extends: Line,
-  props: ['data', 'options'],
+  mixins: [loadData],
+  computed: {
+    ...mapGetters({
+      graphOptions: 'graphOptions'
+    })
+  },
   mounted () {
-    this.renderChart(this.data, this.options)
-  }
+    let graphData = this.extractData();
+    this.renderChart(graphData, this.graphOptions);
+  },
+  methods: {
+    reloadChart() {
+      let graphData = this.extractData();
+      this.renderChart(graphData, this.graphOptions);
+    }
+  },
+  watch: {
+    'dataType': function() {
+      this.reloadChart();
+    }
+  },
 }
 </script>

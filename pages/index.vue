@@ -20,9 +20,9 @@
       </div>
       <Footer />
     </div>
-    <base-highlight v-if="activePost" :title="page" :showLike="page == 'Détails'">
-      <Details v-if="page == 'Détails'" />
-      <Graph v-else-if="page == 'Performances'" />
+    <BaseHighlight v-if="activePost" :title="tradTitle(page)" :showLike="page == 'Details'">
+      <Details v-if="page == 'Details'" />
+      <Graph v-else-if="page == 'Graphics'" />
       <div v-else class="dummy-page">
         <h1>Development in progress</h1>
         <iframe
@@ -33,7 +33,7 @@
           class="video-player"
         />
         </div>
-    </base-highlight>
+    </BaseHighlight>
     <div v-else class="awaiting-selection">
       <div class="centered-items">
         <img src="https://drumstik.com/wp-content/themes/Drumstik_Theme/img/logo-text.png" alt="Drumstik" width="500px"/>
@@ -83,27 +83,29 @@ export default {
           return this.lessons[post]
       return null
     },
-    handleResize() {
-      this.$store.commit('updateWindowSize', window.innerWidth, window.innerHeight)
-    },
     checkFilter(lesson) {
+      if (this.page == 'Graphics')
+        return true;
       if (this.filter == 'all')
         return true;
       if (this.filter == 'favorites' && lesson.liked == true)
         return true;
       if (this.filter == 'files')
         return true;
+    },
+    tradTitle(title) {
+      switch (title) {
+        case 'Details':
+          return 'Détails';
+        case 'Graphics':
+          return 'Statistiques';
+        default:
+          return 'En développement';
+      }
     }
   },
   mounted() {
     this.initLikes();
-  },
-  beforeMount() {
-    window.addEventListener('resize', this.handleResize);
-    this.handleResize();
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize);
   },
 }
 </script>

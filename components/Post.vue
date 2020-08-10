@@ -13,7 +13,9 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import LineChart from '@/components/LineChart'
 import Stars from '@/components/Stars'
+
 export default {
   components: {
     Stars
@@ -29,7 +31,7 @@ export default {
       return str[0].toUpperCase() + str.slice(1).toLowerCase()
     },
     changeActive(postid) {
-      this.$store.commit('updateActive', postid)
+      this.$store.commit('updateActive', postid);
     }
   }
 }

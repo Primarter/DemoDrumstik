@@ -1,14 +1,47 @@
 export const state = () => ({
-  lessons: (require('../data.json')),
+  lessons: require('../data.json'),
   results: require('../data.json'),
   activePost: null,
   filter: 'all',
-  winWidth: 1280,
-  winHeight: 720,
   search: 'title',
   heartClass: 'fa fa-heart fa-2x',
   page: 'Details',
-  dataType: 'performances'
+  dataType: 'performances',
+  graphOptions: {
+    // events: ['click'],
+    // onClick:this.handle,
+    tooltips: {
+        mode: 'nearest'
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true,
+                fontColor: "#fff",
+                min: 0,
+                max : 100,
+                stepsize: 10,
+            },
+            gridLines: {
+                display: true,
+                color: "#cccccc44",
+            }
+        }],
+        xAxes: [ {
+            ticks: {
+                fontColor: "#fff"
+            },
+            gridLines: {
+                display: false
+            }
+        }]
+    },
+    legend: {
+        display: false
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+  }
 })
 
 export const getters = {
@@ -41,6 +74,9 @@ export const getters = {
   },
   dataType(state) {
     return state.dataType;
+  },
+  graphOptions(state) {
+    return state.graphOptions;
   }
 }
 
@@ -58,10 +94,6 @@ export const mutations = {
       lesson.liked = false;
     });
   },
-  updateWindowSize(state, width, height) {
-    state.winWidth = width;
-    state.winHeight = height;
-  },
   updateFilter(state, newFilter) {
     state.filter = newFilter;
   },
@@ -75,6 +107,10 @@ export const mutations = {
     state.page = newPage;
   },
   updateActive(state, postId) {
+    if (postId == -1) {
+      state.activePost = null;
+      return;
+    }
     state.activePost = state.lessons[getPostIndById(state.lessons, postId)];
     state.heartClass = state.activePost.liked == true ? 'fa fa-heart fa-2x' : 'fa fa-heart-o fa-2x'
   },

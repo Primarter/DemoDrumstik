@@ -1,8 +1,5 @@
 export default {
   data() {
-    return {
-      focusBtnClass: [' btn-focus', '', '', ''],
-    }
   },
   methods: {
     updateBtn(idx, newFocus, storeCommit) {
