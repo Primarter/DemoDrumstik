@@ -18,7 +18,7 @@
           />
         </div>
       </div>
-      <Footer />
+      <Footer class="footer-positioning" />
     </div>
     <BaseHighlight v-if="activePost" :title="tradTitle(page)" :showLike="page == 'Details'">
       <Details v-if="page == 'Details'" />
