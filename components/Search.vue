@@ -25,10 +25,10 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Formatting from '@/mixins/formatting';
+import formattinh from '@/mixins/formatting';
 
 export default {
-  mixins: [Formatting],
+  mixins: [formattinh],
   computed: {
     ...mapGetters({
       lessons: 'lessons',

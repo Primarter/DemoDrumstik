@@ -1,5 +1,10 @@
 <template>
   <div class="graph-component-wrapper">
+    <h3>{{ activePost.title }}</h3>
+    <section class="line-wrapper">
+      <b class="under-title">{{ activePost.style.toUpperCase() }}</b>
+      <Stars :level="activePost.level" :scale="30" style="margin: 0 10px 0 0;"/>
+    </section>
     <section class="btn-wrapper">
       <div :class="'my-btn' + focusBtnClass[0]" @click="toggleDataType(); updateBtn(0, 'Same', null);">Performances</div>
       <div class="graph-btn-separation"></div>
@@ -13,15 +18,18 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import Stars from '~/components/Stars'
 import LineChart from '~/components/LineChart'
 import btnFocus from '~/mixins/btnFocus'
 import loadData from '~/mixins/loadData'
+import formatting from '~/mixins/formatting'
 
 export default {
   components: {
-    LineChart
+    LineChart,
+    Stars
   },
-  mixins: [btnFocus, loadData],
+  mixins: [btnFocus, loadData, formatting],
   data() {
     return {
       focusBtnClass: [' btn-focus', ''],
@@ -52,8 +60,23 @@ export default {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
+
+    h3 {
+      margin: 0 0 5px 20px;
+    }
+
+    .line-wrapper {
+      b {
+        align-self: center
+      }
+
+      padding: 0 0 5px 20px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
 
     .btn-wrapper {
       width: 100%;
@@ -78,6 +101,7 @@ export default {
       }
     }
     .graph-wrapper {
+      align-self: center;
       position: relative;
       height: 60vh;
       width: 60vw;
