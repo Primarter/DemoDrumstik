@@ -28,14 +28,11 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Stars from '@/components/Stars'
+import Stars from '@/components/Stars';
+import Formatting from '@/mixins/formatting'
 
 export default {
-  head() {
-    return {
-      script: [{ src: 'formatting.js' }],
-    }
-  },
+  mixins: [Formatting],
   data() {
     return {
     }

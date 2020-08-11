@@ -24,14 +24,11 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
+import Formatting from '@/mixins/formatting';
 
 export default {
-  head () {
-    return {
-      script: [{ src: 'formatting.js' }],
-    }
-  },
+  mixins: [Formatting],
   computed: {
     ...mapGetters({
       lessons: 'lessons',
