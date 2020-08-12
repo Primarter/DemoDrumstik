@@ -2,10 +2,10 @@ export default {
   data() {
   },
   methods: {
-    updateBtn(idx, newFocus, storeCommit) {
+    updateBtn(idx, newFocus, storeCommit, classString=" btn-focus") {
       for (let i = 0; i < this.focusBtnClass.length; i++) {
-        if (i == idx && this.focusBtnClass[i] == " btn-focus") {
-          this.$set(this.focusBtnClass, i, " btn-focus")
+        if (i == idx) {
+          this.$set(this.focusBtnClass, i, classString)
         } else {
           this.$set(this.focusBtnClass, i, "");
         }

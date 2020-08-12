@@ -13,6 +13,13 @@ export const state = () => ({
     tooltips: {
         mode: 'nearest'
     },
+    elements: {
+      point: {
+        radius: 5,
+        backgroundColor: "#ffffff",
+        borderColor: "rgba(96, 223, 232, 1)"
+      }
+    },
     scales: {
         yAxes: [{
             ticks: {

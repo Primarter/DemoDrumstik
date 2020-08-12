@@ -17,7 +17,7 @@ export default {
         labels: [],
         datasets: [{
           label: '',
-          data: [0],
+          data: [],
           borderColor: [
             'rgba(96, 223, 232, 1)',
           ],
@@ -28,8 +28,9 @@ export default {
       };
       graphData.datasets[0].label = this.activePost.title;
       this.activePost[this.dataType].forEach(element => {
-        graphData.datasets[0].data.push(element.percent)
-        graphData.labels.push(element.id)
+        graphData.datasets[0].data.push(Math.round(element.percent));
+        let date = new Date(element.updated_at);
+        graphData.labels.push(date.getDate() + '/' + date.getMonth());
       });
       return graphData;
     }
