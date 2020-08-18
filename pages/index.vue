@@ -45,13 +45,15 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Footer from '@/components/Footer'
-import Filters from '@/components/Filters'
-import Search from '@/components/Search'
-import Post from '@/components/Post'
-import BaseHighlight from '@/components/BaseHighlight'
-import Details from '@/components/Details'
-import Graph from '@/components/Graph'
+import Footer from '~/components/Footer'
+import Filters from '~/components/Filters'
+import Search from '~/components/Search'
+import Post from '~/components/Post'
+import BaseHighlight from '~/components/BaseHighlight'
+import Details from '~/components/Details'
+import Graph from '~/components/Graph'
+import extractWasm from '~/mixins/extractModule'
+// import myTest from '~/test/test.wasm'
 
 export default {
   components: {
@@ -63,6 +65,7 @@ export default {
     Details,
     Graph
   },
+  mixins: [extractWasm],
   computed: {
     ...mapGetters({
       lessons: 'lessons',
@@ -106,6 +109,26 @@ export default {
     }
   },
   mounted() {
+    var importObject = {
+      imports: { imported_func: arg => console.log(arg) }
+    };
+    var testFunc = null;
+    // insert WebAssembly code imports here
+    let integerFunc = fetch('test.wasm').then(response => {
+      if (response.ok)
+          return response.arrayBuffer();
+        throw new Error(`Unable to fetch WASM.`);
+    }).then(bytes => {
+      return WebAssembly.compile(bytes);
+    }).then(module =>
+      WebAssembly.instantiate(module, importObject)
+    ).then(instance => {
+      console.log(instance.exports);
+      testFunc = instance.exports.testInteger;
+      console.log(testFunc())
+      return testFunc;
+    });
+    console.log(integerFunc);
     this.initLikes();
   },
 }

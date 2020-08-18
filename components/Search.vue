@@ -25,7 +25,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import formattinh from '@/mixins/formatting';
+import formattinh from '~/mixins/formatting';
 
 export default {
   mixins: [formattinh],

@@ -13,8 +13,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import LineChart from '@/components/LineChart'
-import Stars from '@/components/Stars'
+import LineChart from '~/components/LineChart'
+import Stars from '~/components/Stars'
 
 export default {
   components: {

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import btnFocus from '@/mixins/btnFocus'
+import btnFocus from '~/mixins/btnFocus'
 
 export default {
   mixins: [btnFocus],

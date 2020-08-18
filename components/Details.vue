@@ -28,8 +28,8 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Stars from '@/components/Stars';
-import formattinh from '@/mixins/formatting'
+import Stars from '~/components/Stars';
+import formattinh from '~/mixins/formatting'
 
 export default {
   mixins: [formattinh],
