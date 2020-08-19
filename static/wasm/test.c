@@ -10,6 +10,12 @@ int testInteger()
     return 5;
 }
 
+int add(int a, int b)
+{
+    printf("a + b = %d", a + b);
+    return (a + b);
+}
+
 #ifdef __cplusplus
 }
 #endif

@@ -53,7 +53,7 @@ import BaseHighlight from '~/components/BaseHighlight'
 import Details from '~/components/Details'
 import Graph from '~/components/Graph'
 import extractWasm from '~/mixins/extractWasm'
-// import myTest from '~/test/test.wasm'
+import Module from '~/test/a.out'
 
 export default {
   components: {
@@ -109,28 +109,8 @@ export default {
     }
   },
   async mounted() {
-    // var importObject = {
-    //   imports: { imported_func: arg => console.log(arg) }
-    // };
-    // var testFunc = null;
-    // // insert WebAssembly code imports here
-    // let integerFunc = fetch('test.wasm').then(response => {
-    //   if (response.ok)
-    //       return response.arrayBuffer();
-    //     throw new Error(`Unable to fetch WASM.`);
-    // }).then(bytes => {
-    //   return WebAssembly.compile(bytes);
-    // }).then(module =>
-    //   WebAssembly.instantiate(module, importObject)
-    // ).then(instance => {
-    //   console.log(instance.exports);
-    //   testFunc = instance.exports.testInteger;
-    //   console.log(testFunc())
-    //   return testFunc;
-    // });
-    // console.log(integerFunc);
-    this.$testWasm = await this.extractModule('test.wasm');
-    console.log(this.$testWasm.testInteger());
+    Module.
+    this.$testWasm = this.extractModule('test.wasm');
     this.initLikes();
   },
 }

@@ -16,6 +16,7 @@ export default {
     ],
     script: [
       { src: 'formatting.js' },
+      { src: 'test.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
