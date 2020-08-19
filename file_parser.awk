@@ -18,10 +18,21 @@ function treat_function()
         sub(/\s.*/, "", elem);
         elem = (elem == "char" || elem == "char*") ? "string" : "number"
         printf "\t%s\n", elem;
+        params_array[idx] = elem;
     }
+    print "cwrap for WebAssembly use:";
+    printf "cwrap(\'%s\', \'%s\', [", name, return_type;
+    for (idx in params_array) {
+        if (params_array[idx + 1]) {
+            printf "'%s', ", params_array[idx];
+        } else {
+            printf "'%s'", params_array[idx];
+        }
+    }
+    print "])";
 }
 
-BEGIN { print "Functions"}
+BEGIN { print "Functions" }
 /\w+\s((\s|\*)*)\w+\(((\w+\s([\s\*]*),*)*)|void\)\s*{/ { treat_function() }
 END { print " - DONE -" }
 
