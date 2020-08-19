@@ -15,7 +15,12 @@ export default {
     return {
       focusBtnClass: [' btn-focus', '', '', '']
     }
-  }
+  },
+  methods: {
+    myTest() {
+      console.log(formatTimeStr(78));
+    }
+  },
 }
 </script>
 

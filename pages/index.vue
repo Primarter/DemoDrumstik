@@ -53,7 +53,6 @@ import BaseHighlight from '~/components/BaseHighlight'
 import Details from '~/components/Details'
 import Graph from '~/components/Graph'
 import extractWasm from '~/mixins/extractWasm'
-import Module from '~/test/a.out'
 
 export default {
   components: {
@@ -109,8 +108,7 @@ export default {
     }
   },
   async mounted() {
-    Module.
-    this.$testWasm = this.extractModule('test.wasm');
+    this.Wasm = this.extractModule();
     this.initLikes();
   },
 }
