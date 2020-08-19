@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-int testInteger()
+int * testInteger(void)
 {
     return 5;
 }
