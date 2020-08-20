@@ -16,7 +16,7 @@ export default {
     ],
     script: [
       { src: 'formatting.js' },
-      { src: 'test.js' }
+      { src: 'glue.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

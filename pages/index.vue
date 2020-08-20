@@ -2,7 +2,7 @@
   <div class="full-page">
     <div class="library-wrapper">
       <div class="library-banner">
-        <h3>Bibliothèque</h3>
+        <h3 @click="jsonTest()">Bibliothèque</h3>
         <Search />
         <Filters />
       </div>
@@ -105,11 +105,26 @@ export default {
         default:
           return 'En développement';
       }
+    },
+    jsonTest() {
+      this.Wasm.createJson();
+      console.log("Called createJson function");
     }
   },
-  async mounted() {
+  mounted() {
     this.Wasm = this.extractModule();
+    FS.mkdir('/data');
+    FS.mount(IDBFS, {}, '/data');
+    FS.syncfs(true, function (err) {
+      console.log("Error while syncfs: " + err);
+    });
+    console.log(this.Wasm);
     this.initLikes();
   },
+  destroyed() {
+    FS.syncfs(function (err) {
+      console.log("Error while syncfs: " + err);
+    });
+  }
 }
 </script>
