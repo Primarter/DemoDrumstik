@@ -113,18 +113,7 @@ export default {
   },
   mounted() {
     this.Wasm = this.extractModule();
-    FS.mkdir('/data');
-    FS.mount(IDBFS, {}, '/data');
-    FS.syncfs(true, function (err) {
-      console.log("Error while syncfs: " + err);
-    });
-    console.log(this.Wasm);
     this.initLikes();
-  },
-  destroyed() {
-    FS.syncfs(function (err) {
-      console.log("Error while syncfs: " + err);
-    });
   }
 }
 </script>
