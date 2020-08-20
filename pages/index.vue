@@ -2,7 +2,7 @@
   <div class="full-page">
     <div class="library-wrapper">
       <div class="library-banner">
-        <h3 @click="jsonTest()">Bibliothèque</h3>
+        <h3>Bibliothèque</h3>
         <Search />
         <Filters />
       </div>

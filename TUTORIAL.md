@@ -5,7 +5,7 @@ Ce tutoriel part du principe que vous connaissez les bases de nuxtJS, par extens
 - install emcc ([Emscripten documentation](https://emscripten.org/docs/getting_started/downloads.html "Emscripten documentation")) and check that you have awk installed
 - Put your C files in a directory named wasm at the root of your project
 - Create a "mixin_generation.awk" file containing this code :
-```javascript
+```awk
 function get_type(param)
 {
     sub(/(\s|\*)\w*/, "", param);
@@ -69,7 +69,7 @@ This method allows most of the C language's features to work. To learn more abou
 - installez emcc ([Emscripten documentation](https://emscripten.org/docs/getting_started/downloads.html "Emscripten documentation")) et vérifiez que vous avez awk déjà installé
 - Placez tous vos fichiers .c dans un dossier appelé "wasm" à la racine du projet
 - Créez un fichier "mixin_generation.awk" contenant ce code :
-```javascript
+```awk
 function get_type(param)
 {
     sub(/(\s|\*)\w*/, "", param);
