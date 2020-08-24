@@ -8,7 +8,7 @@
       </div>
       <div class="vertical-list">
         <h1 v-if="results.length == 0" class="hint">No results</h1>
-        <div v-for="lesson in results">
+        <div v-for="lesson in results" :key="lesson">
           <Post
             v-if="checkFilter(lesson)"
             :title="lesson.title"
@@ -43,18 +43,80 @@
   </div>
 </template>
 
+<!--<script lang="ts">
+import Footer from '@/components/Footer.vue'
+import Filters from '@/components/Filters.vue'
+import Search from '@/components/Search.vue'
+import Post from '@/components/Post.vue'
+import BaseHighlight from '@/components/BaseHighlight.vue'
+import Details from '@/components/Details.vue'
+import Graph from '@/components/Graph.vue'
+import { Vue, Component, Getter } from 'nuxt-property-decorator'
+@Component({
+  components: {
+    Footer,
+    Filters,
+    Search,
+    Post,
+    BaseHighlight,
+    Details,
+    Graph
+  },
+})
+export default class Index extends Vue {
+  @Getter('lessons') lessons
+  @Getter('results') results
+  @Getter('liked') liked
+  @Getter('activePost') activePost
+  @Getter('filter') filter
+  @Getter('page') page
+
+  initLikes() {
+    this.$store.commit('initLikes');
+  }
+  getPostById(searchedId: number) {
+    for (const post in this.lessons)
+      if (this.lessons[post].id == searchedId)
+        return this.lessons[post]
+    return null
+  }
+  checkFilter(lesson: any) {
+    if (this.page == 'Graphics' && (!lesson.performances && !lesson.stopwatches))
+      return false;
+    if (this.filter == 'all')
+      return true;
+    if (this.filter == 'favorites' && lesson.liked == true)
+      return true;
+    if (this.filter == 'files')
+      return true;
+    return false;
+  }
+  tradTitle(title: string) {
+    switch (title) {
+      case 'Details':
+        return 'Détails';
+      case 'Graphics':
+        return 'Statistiques';
+      default:
+        return 'En développement';
+    }
+  }
+}
+</script>-->
+
 <script>
+import Vue from 'vue'
 import { mapGetters } from 'vuex'
-import Footer from '~/components/Footer'
-import Filters from '~/components/Filters'
-import Search from '~/components/Search'
-import Post from '~/components/Post'
-import BaseHighlight from '~/components/BaseHighlight'
-import Details from '~/components/Details'
-import Graph from '~/components/Graph'
+import Footer from '~/components/Footer.vue'
+import Filters from '~/components/Filters.vue'
+import Search from '~/components/Search.vue'
+import Post from '~/components/Post.vue'
+import BaseHighlight from '~/components/BaseHighlight.vue'
+import Details from '~/components/Details.vue'
+import Graph from '~/components/Graph.vue'
 import extractWasm from '~/mixins/extractWasm'
 
-export default {
+export default Vue.extend({
   components: {
     Footer,
     Filters,
@@ -105,15 +167,11 @@ export default {
         default:
           return 'En développement';
       }
-    },
-    jsonTest() {
-      this.Wasm.createJson();
-      console.log("Called createJson function");
     }
   },
   mounted() {
     this.Wasm = this.extractModule();
     this.initLikes();
   }
-}
+})
 </script>

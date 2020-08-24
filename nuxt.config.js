@@ -15,7 +15,6 @@ export default {
       }
     ],
     script: [
-      { src: 'formatting.js' },
       { src: 'glue.js' }
     ],
     link: [
@@ -57,7 +56,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxt/typescript-build'],
   /*
    ** Nuxt.js modules
    */
@@ -76,14 +75,14 @@ export default {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    /* extend(config, ctx) {
-      config.module.rules.push({
-        test: /\.wasm$/,
-        loader: 'wasm-loader'
-      })
-    } */
+    babel: {
+      presets({ isServer }) {
+        return [
+          [
+            "@nuxt/babel-preset-app", { loose: true }
+          ]
+        ]
+      }
+    }
   }
 }

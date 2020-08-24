@@ -1,11 +1,11 @@
-function capitalizeFLetter(str) {
+function capitalizeFLetter(str: string): string {
     return str[0].toUpperCase() + str.slice(1).toLowerCase()
 }
 
-function formatTimeStr(mins) {
+function formatTimeStr(mins: number): string {
   let timeStr = ''
   if (mins >= 60) {
-    timeStr += parseInt(mins / 60) + 'h'
+    timeStr += Math.round(mins / 60) + 'h'
     if (mins % 60 != 0)
       timeStr += ' ' + mins % 60 + ' mins'
   } else if (mins > 0)
@@ -13,7 +13,7 @@ function formatTimeStr(mins) {
   return timeStr
 }
 
-function formatSkillStr(skills) {
+function formatSkillStr(skills: string): string {
   if (!skills)
     return ''
   let format = ' | '
@@ -28,7 +28,7 @@ function formatSkillStr(skills) {
   return format
 }
 
-function formatSearch(search) {
+function formatSearch(search: string): string | null {
   switch (search) {
     case 'title':
       return 'Titres';
