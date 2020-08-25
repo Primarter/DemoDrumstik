@@ -28,8 +28,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      activePost: 'activePost',
-      page: 'page',
+      activePost: 'getActivePost',
+      page: 'getPage',
     })
   },
   methods: {

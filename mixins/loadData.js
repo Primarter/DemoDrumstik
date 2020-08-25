@@ -3,8 +3,8 @@ import { mapGetters } from "vuex"
 export default {
   computed: {
     ...mapGetters({
-      activePost: 'activePost',
-      dataType: 'dataType'
+      activePost: 'getActivePost',
+      dataType: 'getDataType'
     })
   },
   methods: {

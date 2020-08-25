@@ -31,9 +31,9 @@ export default {
   mixins: [formatting],
   computed: {
     ...mapGetters({
-      lessons: 'lessons',
-      results: 'results',
-      search: 'search'
+      lessons: 'getLessons',
+      results: 'getResults',
+      search: 'getSearch'
     })
   },
   methods: {

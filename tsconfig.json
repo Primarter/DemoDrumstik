@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "experimentalDecorators": true,
       "target": "ES2018",
       "module": "ESNext",
       "moduleResolution": "Node",
@@ -29,5 +30,9 @@
     },
     "exclude": [
       "node_modules"
-    ]
+    ],
+    "include": [
+      "shims/types.ts"
+    ],
+    "indent": [true, "spaces", 2],
   }

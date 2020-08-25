@@ -8,7 +8,7 @@
       </div>
       <div class="vertical-list">
         <h1 v-if="results.length == 0" class="hint">No results</h1>
-        <div v-for="lesson in results" :key="lesson">
+        <div v-for="(lesson, key) in results" :key="key">
           <Post
             v-if="checkFilter(lesson)"
             :title="lesson.title"
@@ -20,7 +20,7 @@
       </div>
       <Footer class="footer-positioning" />
     </div>
-    <BaseHighlight v-if="activePost" :title="tradTitle(page)" :showLike="page == 'Details'">
+    <BaseHighlight v-if="activePost.title" :title="tradTitle(page)" :showLike="page == 'Details'">
       <Details v-if="page == 'Details'" />
       <Graph v-else-if="page == 'Graphics'" />
       <div v-else class="dummy-page">
@@ -104,7 +104,7 @@ export default class Index extends Vue {
 }
 </script>-->
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import Footer from '~/components/Footer.vue'
@@ -117,6 +117,11 @@ import Graph from '~/components/Graph.vue'
 import extractWasm from '~/mixins/extractWasm'
 
 export default Vue.extend({
+  data() {
+    return({
+      Wasm: undefined
+    })
+  },
   components: {
     Footer,
     Filters,
@@ -129,25 +134,25 @@ export default Vue.extend({
   mixins: [extractWasm],
   computed: {
     ...mapGetters({
-      lessons: 'lessons',
-      results: 'results',
-      liked: 'liked',
-      activePost: 'activePost',
-      filter: 'filter',
-      page: 'page'
+      lessons: 'getLessons',
+      results: 'getResults',
+      liked: 'getLiked',
+      activePost: 'getActivePost',
+      filter: 'getFilter',
+      page: 'getPage'
     })
   },
   methods: {
     initLikes() {
       this.$store.commit('initLikes');
     },
-    getPostById(searchedId) {
+    getPostById(searchedId: number): any {
       for (const post in this.lessons)
         if (this.lessons[post].id == searchedId)
           return this.lessons[post]
       return null
     },
-    checkFilter(lesson) {
+    checkFilter(lesson: any): boolean {
       if (this.page == 'Graphics' && (!lesson.performances && !lesson.stopwatches))
         return false;
       if (this.filter == 'all')
@@ -158,7 +163,7 @@ export default Vue.extend({
         return true;
       return false;
     },
-    tradTitle(title) {
+    tradTitle(title: string): string {
       switch (title) {
         case 'Details':
           return 'Détails';
@@ -170,7 +175,7 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.Wasm = this.extractModule();
+    //this.Wasm = this.extractModule();
     this.initLikes();
   }
 })

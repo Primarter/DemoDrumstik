@@ -1,5 +1,5 @@
 <template>
-  <section v-if="activePost == null || activePost.id != postid" class="post" @click="changeActive(postid)">
+  <section v-if="activePost.title == '' || activePost.id != postid" class="post" @click="changeActive(postid)">
     <h4>{{ title }}</h4>
     <p>{{ capitalizeFLetter(lessonStyle) }}</p>
     <Stars :level="level" :scale="22" style="float: right" />
@@ -23,7 +23,7 @@ export default {
   props: ['title', 'lessonStyle', 'level', 'postid'],
   computed: {
     ...mapGetters({
-      activePost: 'activePost',
+      activePost: 'getActivePost',
     })
   },
   methods: {

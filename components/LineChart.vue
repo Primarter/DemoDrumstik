@@ -8,7 +8,7 @@ export default {
   mixins: [loadData],
   computed: {
     ...mapGetters({
-      graphOptions: 'graphOptions'
+      graphOptions: 'getGraphOptions'
     })
   },
   mounted () {

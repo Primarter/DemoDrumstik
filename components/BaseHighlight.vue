@@ -2,7 +2,7 @@
   <div class="highlight-container">
     <div class="top-banner">
       <h3>{{ title }}</h3>
-      <i v-if="showLike" @click="likeItem(activePost.id)" :class="heartClass" />
+      <i v-if="showLike" @click="likeItem()" :class="heartClass" />
     </div>
     <div class="highlight-content-wrapper">
       <slot></slot>
@@ -20,13 +20,13 @@ export default {
   },
   computed: {
     ...mapGetters({
-      activePost: 'activePost',
-      liked: 'liked',
-      heartClass: 'heartClass'
+      activePost: 'getActivePost',
+      liked: 'getLiked',
+      heartClass: 'getHeartClass'
     })
   },
   methods: {
-    likeItem(item) {
+    likeItem() {
       if (this.activePost.liked) {
         this.$store.commit('removeLike');
       } else {

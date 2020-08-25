@@ -26,45 +26,66 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { PostClass } from '@/shims/types'
 import { mapGetters } from 'vuex';
-import Stars from '~/components/Stars';
-import formatting from '~/mixins/formatting'
+import { Vue, Component, mixins, namespace } from 'nuxt-property-decorator'
+import Stars from '~/components/Stars.vue';
+import formatting from '~/mixins/formatting.ts'
 
-export default {
-  mixins: [formatting],
-  data() {
-    return {
-    }
-  },
+const appData = namespace('appData')
+
+@Component({
   components: {
     Stars
-  },
-  computed: {
-    ...mapGetters({
-      activePost: 'activePost',
-      lessons: 'lessons',
-      results: 'results',
-      liked: 'liked',
-      heartClass: 'heartClass'
-    }),
-  },
-  methods: {
-    formatTime(mins) {
-      return formatTimeStr(mins);
-    },
-    formatSkills(skills) {
-      return formatSkillStr(skills);
-    },
-    likeItem(item) {
-      if (this.activePost.liked) {
-        this.$store.commit('removeLike');
-      } else {
-        this.$store.commit('addLike');
-      }
-    },
+  }
+})
+export default class Details extends mixins(formatting) {
+  get activePost(): PostClass {
+    return this.$store.state.activePost;
+  }
+  formatTime(mins: number) {
+    return this.formatTimeStr(mins);
+  }
+  formatSkills(skills: string) {
+    return this.formatSkillStr(skills);
+  }
+  likeItem() {
+    if (this.activePost.liked) {
+      this.$store.commit('removeLike');
+    } else {
+      this.$store.commit('addLike');
+    }
   }
 }
+// export default {
+//   mixins: [formatting],
+//   components: {
+//     Stars
+//   },
+//   computed: {
+//     ...mapGetters({
+//       activePost: 'activePost',
+//       liked: 'liked',
+//       heartClass: 'heartClass'
+//     }),
+//   },
+//   methods: {
+//     formatTime(mins: string) {
+//       return formatTimeStr(mins);
+//     },
+//     formatSkills(skills: string) {
+//       return formatSkillStr(skills);
+//     },
+//     likeItem() {
+//       if (this.activePost.liked) {
+//         this.$store.commit('removeLike');
+//       } else {
+//         this.$store.commit('addLike');
+//       }
+//     },
+//   }
+// }
 </script>
 
 <style lang="less">
