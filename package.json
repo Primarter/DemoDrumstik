@@ -19,7 +19,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chart.js": "^2.9.3",
     "font-awesome": "^4.7.0",
     "nuxt": "^2.0.0",
